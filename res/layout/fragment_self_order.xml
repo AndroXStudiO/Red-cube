@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@id/cvHeaderFilter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:minHeight="@dimen/_48dp"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:cardCornerRadius="@dimen/_8dp"
+        app:cardElevation="@dimen/_2dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_13sp"
+                android:textColor="@color/black_500"
+                android:id="@id/textSuggestionFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter by order status"
+                android:layout_marginStart="@dimen/_12dp"
+                android:layout_marginEnd="8.0dip"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/imageViewDate"
+                android:layout_width="@dimen/_20dp"
+                android:layout_height="@dimen/_20dp"
+                android:layout_marginEnd="@dimen/_14_5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_filter"
+                app:tint="@color/black_500" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/rvRequestList"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_width="0.0dip"
+        android:layout_height="0.0dip"
+        android:layout_marginLeft="@dimen/_8dp"
+        android:layout_marginTop="@dimen/_12dp"
+        android:layout_marginRight="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_12dp"
+        android:layout_marginHorizontal="@dimen/_8dp"
+        android:layout_marginVertical="@dimen/_12dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvHeaderFilter" />
+    <com.google.android.material.button.MaterialButton
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:id="@id/btnCall"
+        android:layout_width="150.0dip"
+        android:layout_height="40.0dip"
+        android:layout_marginTop="@dimen/_6dp"
+        android:minHeight="40.0dip"
+        android:text="@string/new_order"
+        android:insetTop="0.0dip"
+        android:insetBottom="0.0dip"
+        android:textAllCaps="false"
+        android:layout_marginEnd="@dimen/_6dp"
+        android:backgroundTint="@color/easy_plan_btn_tint"
+        app:cornerRadius="24.0dip"
+        app:icon="@drawable/ic_call"
+        app:iconGravity="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvHeaderFilter" />
+</androidx.constraintlayout.widget.ConstraintLayout>

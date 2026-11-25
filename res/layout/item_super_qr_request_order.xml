@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_6dp"
+    android:layout_marginBottom="@dimen/_6dp"
+    android:layout_marginStart="@dimen/_16dp"
+    android:layout_marginEnd="@dimen/_16dp"
+    app:cardCornerRadius="@dimen/_12dp"
+    app:cardElevation="1.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingTop="@dimen/_12dp"
+        android:paddingBottom="@dimen/_12dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_12dp"
+        android:paddingEnd="@dimen/_12dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivBrandIcon"
+            android:layout_width="@dimen/_32dp"
+            android:layout_height="@dimen/_32dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_brand_robi" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_10sp"
+            android:textColor="@color/black_500"
+            android:id="@id/tvDateTime"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            app:layout_constraintEnd_toStartOf="@id/tvAmount"
+            app:layout_constraintStart_toEndOf="@id/ivBrandIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@id/tvMsisdn"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2dp"
+            android:layout_marginStart="@dimen/_10dp"
+            app:layout_constraintEnd_toStartOf="@id/tvAmount"
+            app:layout_constraintStart_toEndOf="@id/ivBrandIcon"
+            app:layout_constraintTop_toBottomOf="@id/tvDateTime" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivCommission"
+            android:layout_width="@dimen/_14dp"
+            android:layout_height="@dimen/_14dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginStart="@dimen/_10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivBrandIcon"
+            app:layout_constraintTop_toBottomOf="@id/tvMsisdn"
+            app:srcCompat="@drawable/ic_commission_offer"
+            app:tint="@color/black_500" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_600"
+            android:id="@id/tvCommission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginStart="@dimen/_4dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/ivCommission"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivCommission"
+            app:layout_constraintTop_toBottomOf="@id/tvMsisdn" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_11sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:id="@id/tvRechargeType"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvCommission"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvAmount"
+            app:layout_constraintStart_toEndOf="@id/tvCommission"
+            app:layout_constraintTop_toBottomOf="@id/tvMsisdn" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivCheckmark"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivCheckmark"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_round_tick_filled" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

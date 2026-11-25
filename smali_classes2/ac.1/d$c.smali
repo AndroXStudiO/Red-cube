@@ -1,0 +1,83 @@
+.class public abstract Lac/d$c;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lac/d;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x409
+    name = "c"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Ljava/util/Iterator<",
+        "TT;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field public t:Z
+
+
+# virtual methods
+.method public abstract a()V
+.end method
+
+.method public final hasNext()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lac/d$c;->t:Z
+
+    xor-int/lit8 v0, v0, 0x1
+
+    return v0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    iget-boolean v0, p0, Lac/d$c;->t:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lac/d$c;->t:Z
+
+    invoke-virtual {p0}, Lac/d$c;->a()V
+
+    move-object v0, p0
+
+    check-cast v0, Lac/d$b;
+
+    iget-object v0, v0, Lac/d$b;->v:Lac/d;
+
+    iget-object v0, v0, Lac/d;->u:Ljava/lang/Object;
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+.end method

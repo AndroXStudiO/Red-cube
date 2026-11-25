@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    android:id="@id/llDateInput"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@id/tilDay"
+        android:background="@drawable/text_field_background"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_52dp"
+        android:hint="@string/date"
+        android:layout_weight="1.0"
+        android:layout_marginEnd="@dimen/_4dp"
+        app:boxCollapsedPaddingTop="@dimen/_4dp"
+        app:boxStrokeWidth="0.0dip"
+        app:boxStrokeWidthFocused="0.0dip"
+        app:hintTextAppearance="@style/CustomHintText"
+        app:hintTextColor="@color/black_500">
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="@dimen/_14sp"
+            android:id="@id/etDay"
+            android:background="@android:color/transparent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="2"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@id/tilMonth"
+        android:background="@drawable/text_field_background"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_52dp"
+        android:hint="@string/month"
+        android:layout_weight="1.0"
+        android:layout_marginEnd="@dimen/_4dp"
+        app:boxCollapsedPaddingTop="@dimen/_4dp"
+        app:boxStrokeWidth="0.0dip"
+        app:boxStrokeWidthFocused="0.0dip"
+        app:hintTextAppearance="@style/CustomHintText"
+        app:hintTextColor="@color/black_500">
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="@dimen/_14sp"
+            android:id="@id/etMonth"
+            android:background="@android:color/transparent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="2"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@id/tilYear"
+        android:background="@drawable/text_field_background"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_52dp"
+        android:hint="@string/year"
+        android:layout_weight="1.0"
+        app:boxCollapsedPaddingTop="@dimen/_4dp"
+        app:boxStrokeWidth="0.0dip"
+        app:boxStrokeWidthFocused="0.0dip"
+        app:hintTextAppearance="@style/CustomHintText"
+        app:hintTextColor="@color/black_500">
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="@dimen/_14sp"
+            android:id="@id/etYear"
+            android:background="@android:color/transparent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="4"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

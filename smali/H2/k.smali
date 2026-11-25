@@ -1,0 +1,131 @@
+.class public final LH2/k;
+.super LH2/G;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LH2/G<",
+        "Ljava/lang/Long;",
+        ">;"
+    }
+.end annotation
+
+
+# virtual methods
+.method public final a(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Object;
+    .locals 1
+
+    const-string v0, "bundle"
+
+    invoke-static {v0, p2}, LLa/k;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-static {p1, p2}, Ln7/a;->D(Ljava/lang/String;Landroid/os/Bundle;)J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "long"
+
+    return-object v0
+.end method
+
+.method public final c(Ljava/lang/String;)Ljava/lang/Object;
+    .locals 4
+
+    const-string v0, "L"
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, v0, v1}, Lcc/q;->G(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    const-string v2, "substring(...)"
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, LLa/k;->d(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    move-object v0, p1
+
+    :goto_0
+    const-string v3, "0x"
+
+    invoke-static {p1, v3, v1}, Lcc/q;->N(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    const/4 p1, 0x2
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {v2, p1}, LLa/k;->d(Ljava/lang/String;Ljava/lang/Object;)V
+
+    const/16 v0, 0x10
+
+    invoke-static {v0}, Lx7/Y8;->m(I)V
+
+    invoke-static {p1, v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
+
+    move-result-wide v0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    :goto_1
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final e(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 2
+
+    check-cast p3, Ljava/lang/Number;
+
+    invoke-virtual {p3}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
+
+    const-string p3, "key"
+
+    invoke-static {p3, p2}, LLa/k;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {p1, p2, v0, v1}, Landroid/os/BaseBundle;->putLong(Ljava/lang/String;J)V
+
+    return-void
+.end method

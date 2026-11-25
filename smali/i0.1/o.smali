@@ -1,0 +1,132 @@
+.class public final Li0/o;
+.super LLa/m;
+.source "SourceFile"
+
+# interfaces
+.implements LKa/p;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LLa/m;",
+        "LKa/p<",
+        "Ly0/i;",
+        "Ljava/lang/Integer;",
+        "Lwa/A;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final synthetic A:Lh0/b$l;
+
+.field public final synthetic B:LKa/l;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "LKa/l<",
+            "Li0/x;",
+            "Lwa/A;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final synthetic C:I
+
+.field public final synthetic D:I
+
+.field public final synthetic u:LK0/i;
+
+.field public final synthetic v:Li0/z;
+
+.field public final synthetic w:Lh0/F;
+
+.field public final synthetic x:Lf0/h;
+
+.field public final synthetic y:Z
+
+.field public final synthetic z:LK0/e$a;
+
+
+# direct methods
+.method public constructor <init>(IILK0/e$a;LK0/i;LKa/l;Lf0/h;Lh0/b$l;Lh0/F;Li0/z;Z)V
+    .locals 0
+
+    iput-object p4, p0, Li0/o;->u:LK0/i;
+
+    iput-object p9, p0, Li0/o;->v:Li0/z;
+
+    iput-object p8, p0, Li0/o;->w:Lh0/F;
+
+    iput-object p6, p0, Li0/o;->x:Lf0/h;
+
+    iput-boolean p10, p0, Li0/o;->y:Z
+
+    iput-object p3, p0, Li0/o;->z:LK0/e$a;
+
+    iput-object p7, p0, Li0/o;->A:Lh0/b$l;
+
+    iput-object p5, p0, Li0/o;->B:LKa/l;
+
+    iput p1, p0, Li0/o;->C:I
+
+    iput p2, p0, Li0/o;->D:I
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1}, LLa/m;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
+
+    move-object v9, p1
+
+    check-cast v9, Ly0/i;
+
+    check-cast p2, Ljava/lang/Number;
+
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+
+    iget p1, p0, Li0/o;->C:I
+
+    or-int/lit8 p1, p1, 0x1
+
+    invoke-static {p1}, Lkb/E;->r(I)I
+
+    move-result v0
+
+    iget p1, p0, Li0/o;->D:I
+
+    invoke-static {p1}, Lkb/E;->r(I)I
+
+    move-result v1
+
+    iget-object v7, p0, Li0/o;->w:Lh0/F;
+
+    iget-object v2, p0, Li0/o;->z:LK0/e$a;
+
+    iget-object v6, p0, Li0/o;->A:Lh0/b$l;
+
+    iget-object v3, p0, Li0/o;->u:LK0/i;
+
+    iget-object v8, p0, Li0/o;->v:Li0/z;
+
+    iget-object v5, p0, Li0/o;->x:Lf0/h;
+
+    iget-boolean v10, p0, Li0/o;->y:Z
+
+    iget-object v4, p0, Li0/o;->B:LKa/l;
+
+    invoke-static/range {v0 .. v10}, Li0/r;->a(IILK0/e$a;LK0/i;LKa/l;Lf0/h;Lh0/b$l;Lh0/F;Li0/z;Ly0/i;Z)V
+
+    sget-object p1, Lwa/A;->a:Lwa/A;
+
+    return-object p1
+.end method

@@ -1,0 +1,294 @@
+.class public abstract Lg9/h;
+.super Landroid/app/Service;
+.source "SourceFile"
+
+
+# annotations
+.annotation build Landroid/annotation/SuppressLint;
+    value = {
+        "UnwrappedWakefulBroadcastReceiver"
+    }
+.end annotation
+
+
+# static fields
+.field public static final synthetic y:I
+
+
+# instance fields
+.field public final t:Ljava/util/concurrent/ExecutorService;
+
+.field public u:Lg9/F;
+
+.field public final v:Ljava/lang/Object;
+
+.field public w:I
+
+.field public x:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 8
+
+    invoke-direct {p0}, Landroid/app/Service;-><init>()V
+
+    new-instance v7, Lm7/a;
+
+    const-string v0, "Firebase-Messaging-Intent-Handle"
+
+    invoke-direct {v7, v0}, Lm7/a;-><init>(Ljava/lang/String;)V
+
+    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-direct {v6}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+
+    const-wide/16 v3, 0x3c
+
+    const/4 v1, 0x1
+
+    move v2, v1
+
+    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
+
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->unconfigurableExecutorService(Ljava/util/concurrent/ExecutorService;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lg9/h;->t:Ljava/util/concurrent/ExecutorService;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lg9/h;->v:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lg9/h;->x:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/content/Intent;)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    invoke-static {p1}, Lg9/E;->b(Landroid/content/Intent;)V
+
+    :cond_0
+    iget-object p1, p0, Lg9/h;->v:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_0
+    iget v0, p0, Lg9/h;->x:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lg9/h;->x:I
+
+    if-nez v0, :cond_1
+
+    iget v0, p0, Lg9/h;->w:I
+
+    invoke-virtual {p0, v0}, Landroid/app/Service;->stopSelfResult(I)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    monitor-exit p1
+
+    return-void
+
+    :goto_1
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public b(Landroid/content/Intent;)Landroid/content/Intent;
+    .locals 0
+
+    return-object p1
+.end method
+
+.method public abstract c(Landroid/content/Intent;)V
+.end method
+
+.method public final declared-synchronized onBind(Landroid/content/Intent;)Landroid/os/IBinder;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    const-string p1, "EnhancedIntentService"
+
+    const/4 v0, 0x3
+
+    invoke-static {p1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const-string p1, "EnhancedIntentService"
+
+    const-string v0, "Service received bind request"
+
+    invoke-static {p1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    iget-object p1, p0, Lg9/h;->u:Lg9/F;
+
+    if-nez p1, :cond_1
+
+    new-instance p1, Lg9/F;
+
+    new-instance v0, Lg9/h$a;
+
+    invoke-direct {v0, p0}, Lg9/h$a;-><init>(Lg9/h;)V
+
+    invoke-direct {p1, v0}, Lg9/F;-><init>(Lg9/h$a;)V
+
+    iput-object p1, p0, Lg9/h;->u:Lg9/F;
+
+    :cond_1
+    iget-object p1, p0, Lg9/h;->u:Lg9/F;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method
+
+.method public onDestroy()V
+    .locals 1
+
+    iget-object v0, p0, Lg9/h;->t:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
+
+    invoke-super {p0}, Landroid/app/Service;->onDestroy()V
+
+    return-void
+.end method
+
+.method public final onStartCommand(Landroid/content/Intent;II)I
+    .locals 3
+
+    iget-object p2, p0, Lg9/h;->v:Ljava/lang/Object;
+
+    monitor-enter p2
+
+    :try_start_0
+    iput p3, p0, Lg9/h;->w:I
+
+    iget p3, p0, Lg9/h;->x:I
+
+    add-int/lit8 p3, p3, 0x1
+
+    iput p3, p0, Lg9/h;->x:I
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {p0, p1}, Lg9/h;->b(Landroid/content/Intent;)Landroid/content/Intent;
+
+    move-result-object p2
+
+    const/4 p3, 0x2
+
+    if-nez p2, :cond_0
+
+    invoke-virtual {p0, p1}, Lg9/h;->a(Landroid/content/Intent;)V
+
+    return p3
+
+    :cond_0
+    new-instance v0, LJ7/k;
+
+    invoke-direct {v0}, LJ7/k;-><init>()V
+
+    new-instance v1, LC8/g;
+
+    const/4 v2, 0x3
+
+    invoke-direct {v1, p0, p2, v0, v2}, LC8/g;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+
+    iget-object p2, p0, Lg9/h;->t:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {p2, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    iget-object p2, v0, LJ7/k;->a:LJ7/A;
+
+    invoke-virtual {p2}, LJ7/A;->l()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0, p1}, Lg9/h;->a(Landroid/content/Intent;)V
+
+    return p3
+
+    :cond_1
+    new-instance p3, LM2/c;
+
+    invoke-direct {p3}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, LD/g0;
+
+    invoke-direct {v0, p0, p1}, LD/g0;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-virtual {p2, p3, v0}, LJ7/A;->o(Ljava/util/concurrent/Executor;LJ7/d;)LJ7/A;
+
+    const/4 p1, 0x3
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit p2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/main"
+    android:background="@color/base_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineStartMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineEndMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clmiddle"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivSuccess"
+            android:layout_width="72.0dip"
+            android:layout_height="72.0dip"
+            android:layout_marginTop="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_success_animation" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/txtPurchaseSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:text="Payment Successful"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivSuccess" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:id="@id/txtPurchaseMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPurchaseSuccessful" />
+        <LinearLayout
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:id="@id/llAmountCollect"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="01X XX XXXXXX is activated successfully"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPurchaseMsg">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_500"
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please collect BDT "
+                android:layout_marginStart="@dimen/_8dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:gravity="center_horizontal"
+                android:id="@id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="340.00"
+                android:layout_marginStart="@dimen/_4dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_500"
+                android:layout_gravity="center_vertical"
+                android:id="@id/txtTk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TK"
+                android:layout_marginStart="@dimen/_4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:id="@id/llReqauestId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="01X XX XXXXXX is activated successfully"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llAmountCollect">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_500"
+                android:gravity="center_horizontal"
+                android:id="@id/txtReqId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/request_id"
+                android:layout_marginStart="@dimen/_8dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:gravity="center_horizontal"
+                android:id="@id/txtReqIdVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXXXXXXXXX"
+                android:layout_marginStart="@dimen/_8dp" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_gravity="center_vertical"
+                android:id="@id/ivCopy"
+                android:layout_width="@dimen/_16dp"
+                android:layout_height="@dimen/_16dp"
+                android:layout_marginStart="@dimen/_8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_copy" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_gravity="center"
+        android:id="@id/clOrderSummary"
+        android:paddingTop="@dimen/_12dp"
+        android:paddingBottom="@dimen/_12dp"
+        android:visibility="gone"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_64dp"
+        android:paddingStart="@dimen/_16dp"
+        android:paddingEnd="@dimen/_20dp"
+        android:paddingVertical="@dimen/_12dp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/clmiddle">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guideline60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.6" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/txtOrderSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_summary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:id="@id/tvDeviceInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:text="Phone No :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtOrderSummary" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/tvDevicePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 01819887643"
+            app:layout_constraintStart_toEndOf="@id/guideline60"
+            app:layout_constraintTop_toTopOf="@id/tvDeviceInfo" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:id="@id/tvPlanInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="Router Model: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDeviceInfo" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/tvPlanPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Robi Wifi Basic"
+            app:layout_constraintStart_toEndOf="@id/guideline60"
+            app:layout_constraintTop_toTopOf="@id/tvPlanInfo" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:id="@id/txtSerial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="Serial No.: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPlanInfo" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/tvSerialNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1ABHFU823472"
+            app:layout_constraintStart_toEndOf="@id/guideline60"
+            app:layout_constraintTop_toTopOf="@id/txtSerial" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_22dp"
+            android:text="Please collect BDT 5,090.00 TK"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSerial" />
+        <com.google.android.material.button.MaterialButton
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:id="@id/btnCompleteOrder"
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/_48dp"
+            android:layout_marginTop="@dimen/_64dp"
+            android:minHeight="40.0dip"
+            android:text="Complete Order"
+            android:insetTop="0.0dip"
+            android:insetBottom="0.0dip"
+            android:textAllCaps="false"
+            android:layout_marginStart="@dimen/_6dp"
+            android:backgroundTint="@color/easy_plan_btn_tint"
+            app:cornerRadius="24.0dip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.button.MaterialButton
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:id="@id/btnReceivePayment"
+        android:layout_width="0.0dip"
+        android:layout_height="@dimen/_48dp"
+        android:layout_marginTop="@dimen/_64dp"
+        android:minHeight="40.0dip"
+        android:text="@string/btn_return_to_home_text"
+        android:insetTop="0.0dip"
+        android:insetBottom="0.0dip"
+        android:textAllCaps="false"
+        android:layout_marginStart="@dimen/_6dp"
+        android:backgroundTint="@color/easy_plan_btn_tint"
+        app:cornerRadius="24.0dip"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/clmiddle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

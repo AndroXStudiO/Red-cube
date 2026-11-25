@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bg_common_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintVertical_bias="1.0">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineStartMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_16dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineEndMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+        <View
+            android:id="@id/view2"
+            android:background="@drawable/bg_bottom_sheet_header_shape"
+            android:layout_width="@dimen/_32dp"
+            android:layout_height="4.0dip"
+            android:layout_marginTop="@dimen/_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivClose"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_24dp"
+            android:layout_marginTop="@dimen/_13dp"
+            android:layout_marginEnd="@dimen/_19dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_grey_close" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clRetailInfo"
+            android:background="@color/white"
+            android:paddingTop="@dimen/_16dp"
+            android:paddingBottom="@dimen/_16dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginRight="@dimen/_16dp"
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:paddingVertical="@dimen/_16dp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+            app:layout_constraintTop_toBottomOf="@id/ivClose">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_900"
+                android:id="@id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="রিটেইলারের তথ্য"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@id/rowRetailerCode"
+                android:background="@color/black_50"
+                android:padding="@dimen/_10dp"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeader">
+                <TextView
+                    android:textSize="@dimen/_12sp"
+                    android:textColor="@color/black_800"
+                    android:id="@id/tvRetailerCodeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="রিটেইলার কোড"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:textSize="@dimen/_12sp"
+                    android:textColor="@color/black_700"
+                    android:id="@id/tvRetailerCodeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৯৮৭৬৫৪"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvRetailerCodeLabel" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@id/rowAirtel"
+                android:background="@color/black_50"
+                android:padding="@dimen/_10dp"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rowRetailerCode">
+                <TextView
+                    android:textSize="@dimen/_12sp"
+                    android:textColor="@color/black_800"
+                    android:id="@id/tvAirtelLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="এয়ারটেল নম্বর"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:id="@id/tvAirtelValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvAirtelLabel">
+                    <ImageView
+                        android:layout_width="@dimen/_14dp"
+                        android:layout_height="@dimen/_14dp"
+                        android:src="@drawable/ic_brand_airtel" />
+                    <TextView
+                        android:textSize="@dimen/_12sp"
+                        android:textColor="@color/black_700"
+                        android:id="@id/tvAirtelValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 01888123456"
+                        android:layout_marginStart="@dimen/_6dp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@id/rowRobi"
+                android:background="@color/black_50"
+                android:padding="@dimen/_10dp"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rowAirtel">
+                <TextView
+                    android:textSize="@dimen/_12sp"
+                    android:textColor="@color/black_800"
+                    android:id="@id/tvRobiLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EL Number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:id="@id/tvRobiValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvRobiLabel">
+                    <ImageView
+                        android:layout_width="@dimen/_14dp"
+                        android:layout_height="@dimen/_14dp"
+                        android:src="@drawable/ic_brand_robi" />
+                    <TextView
+                        android:textSize="@dimen/_12sp"
+                        android:textColor="@color/black_700"
+                        android:id="@id/tvRobiValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 01658123456"
+                        android:layout_marginStart="@dimen/_6dp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clProceed"
+            android:background="@drawable/bg_recharge_bottom_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="108.0dip"
+            android:elevation="@dimen/_8dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clRetailInfo"
+            app:layout_constraintVertical_bias="1.0">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.google.android.material.button.MaterialButton
+                    android:textSize="@dimen/_16sp"
+                    android:gravity="center"
+                    android:id="@id/btnBack"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/_48dp"
+                    android:layout_margin="@dimen/_2dp"
+                    android:text="দিক নির্দেশনা"
+                    android:layout_weight="1.0"
+                    android:insetTop="0.0dip"
+                    android:insetBottom="0.0dip"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/_32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTC"
+                    style="@style/Button_Red_Border_Only.RechargePanel" />
+                <com.google.android.material.button.MaterialButton
+                    android:textSize="@dimen/_16sp"
+                    android:id="@id/btnProceed"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/_48dp"
+                    android:layout_margin="@dimen/_2dp"
+                    android:text="রিটেইলার বিবরণ"
+                    android:layout_weight="1.0"
+                    android:insetTop="0.0dip"
+                    android:insetBottom="0.0dip"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/_32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTC"
+                    style="@style/Button_Red_Body.RechargePanel" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

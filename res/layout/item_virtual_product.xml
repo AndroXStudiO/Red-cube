@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_gravity="center"
+    android:padding="0.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dashboard_menu_item_layout_margin"
+    app:cardCornerRadius="16.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/constraintLayout"
+        android:background="@color/page_background"
+        android:padding="0.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="0.0dip">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:textSize="@dimen/dashboard_menu_title_text_size"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:gravity="center"
+            android:id="@id/tvBrand"
+            android:paddingTop="1.0dip"
+            android:paddingBottom="1.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="50.0dip"
+            android:paddingVertical="1.0dip"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_operator_robi" />
+        <ImageView
+            android:id="@id/imgDashMenuIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dashboard_menu_icon_size"
+            android:contentDescription="@null"
+            android:layout_marginStart="8.0dip"
+            android:layout_marginEnd="8.0dip"
+            app:layout_constraintBottom_toTopOf="@id/tvDashMenuTitle"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBrand" />
+        <TextView
+            android:textSize="@dimen/dashboard_menu_title_text_size"
+            android:textStyle="normal"
+            android:textColor="@color/black_500"
+            android:gravity="center|top"
+            android:id="@id/tvDashMenuTitle"
+            android:paddingTop="8.0dip"
+            android:paddingBottom="8.0dip"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4.0dip"
+            android:layout_marginRight="4.0dip"
+            android:paddingVertical="8.0dip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgDashMenuIcon" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:id="@id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.8" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:id="@id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

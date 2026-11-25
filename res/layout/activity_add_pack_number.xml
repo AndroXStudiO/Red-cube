@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clOtpView"
+            android:background="@color/base_background"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineStartMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="@dimen/_16dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineEndMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="@dimen/_16dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="horizontal"
+                android:id="@id/guidelineTopMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.05" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="horizontal"
+                android:id="@id/guidelineTop_60_Margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.6" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="horizontal"
+                android:id="@id/guideline_25_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.25" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_16sp"
+                android:textColor="@color/black"
+                android:gravity="center_horizontal"
+                android:id="@id/txtOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="Enter the OTP sent to customer’s number 018XXXXXXXXX"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+                app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+                app:layout_constraintTop_toTopOf="parent" />
+            <bd.com.robi.redcube.custom_view.inputViewPin.InputView6DigitOTP
+                android:id="@id/inputViewOTP"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtOtp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textColor="@color/black"
+                android:gravity="center_horizontal"
+                android:id="@id/txtResendOtp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24dp"
+                android:text="@string/text_resend_otp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+                app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+                app:layout_constraintTop_toBottomOf="@id/inputViewOTP" />
+            <com.google.android.material.button.MaterialButton
+                android:textSize="@dimen/_14sp"
+                android:id="@id/btnLogin"
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/_48dp"
+                android:layout_marginTop="@dimen/_32dp"
+                android:layout_marginBottom="@dimen/_16dp"
+                android:text="@string/btn_submit"
+                android:insetTop="@dimen/_0dp"
+                android:insetBottom="@dimen/_0dp"
+                android:textAllCaps="false"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                app:cornerRadius="@dimen/_32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtResendOtp"
+                style="@style/Button_Red_Body.RechargePanel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clNumberInput"
+            android:background="@color/base_background"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_900"
+                android:id="@id/tvNumberInputLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12dp"
+                android:text="@string/input_number_robi_airtel"
+                android:layout_marginStart="@dimen/_16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@id/text_input_layout"
+                android:background="@drawable/text_field_background"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_56dp"
+                android:layout_marginLeft="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginRight="@dimen/_16dp"
+                android:hint="@string/enter_text_Mobile"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxCollapsedPaddingTop="4.0dip"
+                app:boxStrokeWidth="0.0dip"
+                app:boxStrokeWidthFocused="0.0dip"
+                app:hintTextAppearance="@style/CustomHintText"
+                app:hintTextColor="@color/black_500"
+                app:layout_constraintTop_toBottomOf="@id/tvNumberInputLabel">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@id/edit_text_mobile_no"
+                    android:background="@android:color/transparent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="11"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <CheckBox
+                android:textSize="@dimen/_12sp"
+                android:id="@id/checkBoxPrivacyPolicy"
+                android:background="@android:color/transparent"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="ক্যাম্পেইন হইতে প্রাপ্ত অফার/প্যাক এই নাম্বারে প্যাক পেতে চাই"
+                android:paddingStart="@dimen/_8dp"
+                android:paddingEnd="0.0dip"
+                app:layout_constraintEnd_toEndOf="@id/text_input_layout"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/text_input_layout"
+                app:layout_constraintTop_toBottomOf="@id/text_input_layout"
+                style="@style/check_box_terms_condition_agreement" />
+            <CheckBox
+                android:textSize="@dimen/_12sp"
+                android:id="@id/checkBoxMarkFavourite"
+                android:background="@android:color/transparent"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/mark_as_favourite"
+                android:paddingStart="@dimen/_8dp"
+                android:paddingEnd="0.0dip"
+                android:layout_marginEnd="20.0dip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/text_input_layout"
+                app:layout_constraintTop_toBottomOf="@id/checkBoxPrivacyPolicy"
+                style="@style/check_box_terms_condition_agreement" />
+            <com.google.android.material.button.MaterialButton
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:id="@id/btnSendOtp"
+                android:layout_width="0.0dip"
+                android:layout_height="@dimen/_48dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text="@string/send_otp"
+                android:insetTop="0.0dip"
+                android:insetBottom="0.0dip"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                app:cornerRadius="@dimen/_32dp"
+                app:layout_constraintEnd_toEndOf="@id/text_input_layout"
+                app:layout_constraintStart_toStartOf="@id/text_input_layout"
+                app:layout_constraintTop_toBottomOf="@id/checkBoxMarkFavourite"
+                style="@style/Button_Red_Body.RechargePanel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

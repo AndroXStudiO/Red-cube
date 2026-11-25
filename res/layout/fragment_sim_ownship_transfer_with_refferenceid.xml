@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineStartMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineEndMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.Group
+        android:id="@id/groupMobileNumberInput"
+        android:layout_width="0.0dip"
+        android:layout_height="0.0dip"
+        app:constraint_referenced_ids="tvEnterMobile, tilName,clProceedButton" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:id="@id/tvEnterMobile"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/text_customer_number"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:textSize="16.0sp"
+        android:textColor="@color/black_800"
+        android:id="@id/tilName"
+        android:background="@drawable/bg_rectangle_shape"
+        android:padding="12.0dip"
+        android:layout_width="0.0dip"
+        android:layout_height="52.0dip"
+        android:layout_marginTop="@dimen/_12dp"
+        android:hint="01XXX"
+        android:drawablePadding="@dimen/_2dp"
+        android:inputType="number"
+        android:drawableStart="@drawable/ic_mobile"
+        app:hintTextAppearance="@style/CustomHintText"
+        app:hintTextColor="@color/black_500"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/tvEnterMobile" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clProceedButton"
+        android:background="@drawable/bg_recharge_bottom_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_8dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+        <com.google.android.material.button.MaterialButton
+            android:enabled="true"
+            android:id="@id/btnProceed"
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/_48dp"
+            android:layout_marginTop="@dimen/_12dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            android:text="@string/btn_proceed"
+            android:insetTop="@dimen/_0dp"
+            android:insetBottom="@dimen/_0dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:cornerRadius="@dimen/_32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Button_Red_Body.RechargePanel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Group
+        android:id="@id/groupSimSelection"
+        android:visibility="gone"
+        android:layout_width="0.0dip"
+        android:layout_height="0.0dip"
+        app:constraint_referenced_ids="tvEnterReffernceID, tilReferenceID" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:id="@id/tvEnterReffernceID"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/enter_reference_id"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@id/tilReferenceID"
+        android:background="@drawable/text_field_background"
+        android:paddingTop="@dimen/_2dp"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12dp"
+        android:text="@string/enter_reference_id"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxCollapsedPaddingTop="@dimen/_4dp"
+        app:boxStrokeWidth="0.0dip"
+        app:boxStrokeWidthFocused="0.0dip"
+        app:hintTextAppearance="@style/CustomHintText"
+        app:hintTextColor="@color/black_500"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/tvEnterReffernceID">
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="@dimen/_14sp"
+            android:id="@id/etReferenceID"
+            android:background="@android:color/transparent"
+            android:scrollbars="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:minLines="1"
+            android:maxLength="100"
+            android:inputType="textMultiLine" />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

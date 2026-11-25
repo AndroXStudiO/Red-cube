@@ -1,0 +1,27 @@
+.class public final LI2/b;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final a:LG0/d;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
+
+    sget-object v0, LI2/b$a;->t:LI2/b$a;
+
+    new-instance v1, LG0/d;
+
+    const v2, -0x411a66b6
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v2, v3, v0}, LG0/d;-><init>(IZLjava/lang/Object;)V
+
+    sput-object v1, LI2/b;->a:LG0/d;
+
+    return-void
+.end method

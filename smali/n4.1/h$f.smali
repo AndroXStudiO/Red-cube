@@ -1,0 +1,97 @@
+.class public final Ln4/h$f;
+.super LLa/m;
+.source "SourceFile"
+
+# interfaces
+.implements LKa/a;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Ln4/h;-><init>()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LLa/m;",
+        "LKa/a<",
+        "Landroidx/lifecycle/ViewModelProvider$Factory;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final synthetic u:Ln4/h;
+
+.field public final synthetic v:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(Ln4/h;Lwa/g;)V
+    .locals 0
+
+    iput-object p1, p0, Ln4/h$f;->u:Ln4/h;
+
+    iput-object p2, p0, Ln4/h$f;->v:Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, LLa/m;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Ln4/h$f;->v:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lwa/g;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/lifecycle/ViewModelStoreOwner;
+
+    instance-of v1, v0, Landroidx/lifecycle/HasDefaultViewModelProviderFactory;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Landroidx/lifecycle/HasDefaultViewModelProviderFactory;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_2
+
+    invoke-interface {v0}, Landroidx/lifecycle/HasDefaultViewModelProviderFactory;->getDefaultViewModelProviderFactory()Landroidx/lifecycle/ViewModelProvider$Factory;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    return-object v0
+
+    :cond_2
+    :goto_1
+    iget-object v0, p0, Ln4/h$f;->u:Ln4/h;
+
+    invoke-virtual {v0}, Ln4/c;->getDefaultViewModelProviderFactory()Landroidx/lifecycle/ViewModelProvider$Factory;
+
+    move-result-object v0
+
+    return-object v0
+.end method

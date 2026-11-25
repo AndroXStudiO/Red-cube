@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/base_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clBrandRobi"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineStartRobi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_12dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineFirstQuarterRobi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="165.0dip" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineSecondQuarterRobi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.66" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineThirdQuarterRobi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.75" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineEndRobi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.973236" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:id="@id/textSimType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stock_order_summary"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="8.0dip"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:id="@id/tvEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_edit"
+            android:layout_marginStart="@dimen/_4dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEndRobi"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:gravity="center"
+        android:id="@id/recycleView"
+        android:background="@drawable/bg_rectangle_shape_with_below_zero_radius"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toEndOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/clBrandRobi" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clTotal"
+        android:background="@drawable/bg_grey_rectangle_shape_top_zero_radius"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="48.0dip"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintEnd_toStartOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toEndOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/recycleView">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:id="@id/tvTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginEnd="8.0dip"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivRobiTaka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textTotal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_taka" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:id="@id/textTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_marginStart="@dimen/_4dp"
+            android:layout_marginEnd="@dimen/_12dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineStartMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineEndMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clRechargeButton"
+        android:background="@drawable/bg_recharge_bottom_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_8dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycleView"
+        app:layout_constraintVertical_bias="1.0">
+        <com.google.android.material.button.MaterialButton
+            android:enabled="true"
+            android:id="@id/btnRecharge"
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/_48dp"
+            android:layout_marginTop="@dimen/_12dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            android:text="@string/report_place_request"
+            android:insetTop="@dimen/_0dp"
+            android:insetBottom="@dimen/_0dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:cornerRadius="@dimen/_32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Button_Red_Body.RechargePanel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

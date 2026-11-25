@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@id/llMain"
+    android:background="@drawable/bg_grid_box"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/_44dp"
+    android:layout_margin="@dimen/_4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textColor="@color/black_800"
+        android:gravity="center"
+        android:id="@id/tvGridNumber"
+        android:padding="12.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

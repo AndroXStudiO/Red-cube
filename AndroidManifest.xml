@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    android:compileSdkVersion="36"
+    android:compileSdkVersionCodename="16"
+    package="bd.com.robi.redcube"
+    platformBuildVersionCode="36"
+    platformBuildVersionName="16"
+    android:networkSecurityConfig="@xml/network_security_config"
+    android:usesCleartextTraffic="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Allows the app to create network sockets and use customised network protocols. The browser and other applications provide means to send data to the Internet, so this permission is not required to send data to the Internet. -->
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <!-- Allows the app to use biometric hardware for authentication -->
+    <uses-permission
+        android:name="android.permission.USE_BIOMETRIC" />
+    <!-- Allows the app to use fingerprint hardware for authentication -->
+    <uses-permission
+        android:name="android.permission.USE_FINGERPRINT" />
+    <!-- This app can get your approximate location from Location Services while the app is in use. Location Services for your device must be turned on for the app to get location. -->
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- This app can get your precise location from Location Services while the app is in use. Location Services for your device must be turned on for the app to get location. This may increase battery usage. -->
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Allows the app to view information about network connections such as which networks exist and are connected. -->
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Allows the app to write the contents of your shared storage. -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <!-- Allows the app to read data about your contacts stored on your phone. Apps will also have access to the accounts on your phone that have created contacts. This may include any accounts created by apps that you have installed. This permission allows any apps to save your contact data, and malicious apps may share contact data without your knowledge. -->
+    <uses-permission
+        android:name="android.permission.READ_CONTACTS" />
+    <!-- Allows the app to access the phone features of the device. This permission allows the app to determine the phone number and device IDs, whether a call is active and the remote number connected by a call. -->
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+    <!-- Allows the app to show notifications -->
+    <uses-permission
+        android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Allows the app to display notifications as full screen activities on a locked device -->
+    <uses-permission
+        android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <!-- Allows the app to control the vibrator. -->
+    <uses-permission
+        android:name="android.permission.VIBRATE" />
+    <uses-feature
+        android:name="android.hardware.fingerprint"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.portrait"
+        android:required="false" />
+    <queries>
+        <package
+            android:name="com.tcap.fingerprint" />
+        <intent>
+            <action
+                android:name="android.intent.action.VIEW" />
+            <data
+                android:scheme="https" />
+        </intent>
+    </queries>
+    <!-- This app can take pictures and record videos using the camera while the app is in use. -->
+    <uses-permission
+        android:name="android.permission.CAMERA" />
+    <!-- Allows the app to prevent the phone from going to sleep. -->
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK" />
+    <!-- Allows apps to accept cloud-to-device messages sent by the app's service. Using this service will incur data usage. Malicious apps could cause excess data usage. -->
+    <uses-permission
+        android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- Allows a publisher app to access a valid advertising ID directly or indirectly. -->
+    <uses-permission
+        android:name="com.google.android.gms.permission.AD_ID" />
+    <!-- Allows the app to retrieve its install referrer information. -->
+    <uses-permission
+        android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <permission
+        android:name="bd.com.robi.redcube.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+    <uses-permission
+        android:name="bd.com.robi.redcube.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <supports-screens
+        android:anyDensity="true"
+        android:normalScreens="true"
+        android:largeScreens="true" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <!-- Allows the app to read the contents of your shared storage. -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <application
+        android:theme="@style/Base.Theme.RedCube"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:name="bd.com.robi.redcube.application.AppManager"
+		android:debuggable="true"
+        android:launchMode="singleInstance"
+        android:allowBackup="false"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:extractNativeLibs="false"
+        android:fullBackupContent="@xml/backup_rules"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:dataExtractionRules="@xml/data_extraction_rules">
+        <meta-data
+            android:name="org.osmdroid.config"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="barcode" />
+        <receiver
+            android:name="bd.com.robi.redcube.utils.UsbReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action
+                    android:name="bd.com.robi.redcube.USB_PERMISSION" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="bd.com.robi.redcube.utils.NotificationRejectReceiver"
+            android:exported="false" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.spash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="bd.com.robi.redcube.ui.login.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.login.BiometricActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.DashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|layoutDirection|locale|screenSize"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.otp_verification.OTPVerificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.search.SearchActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reset_password.PasswordResetActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.gstore_offer.OfferActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.gstore_offer.OfferSearchActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.gstore_offer.OfferSearchRechargeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.gstore_offer.OfferPurchaseSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.menu.WebViewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.super_qr.SuperQrRechargeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.super_qr.SuperQrResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.multi_recharge.MultiRechargeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.multi_recharge_2nd.MultiRecharge2ndActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.easy_plan.EasyPlanActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.easy_plan_purchase.EasyPlanPurchaseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.multi_recharge.success.RechargeSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.easy_plan.success.EasyPlanSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.e_scratch_card.EScratchCardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.e_scrtch_card_purchase.EScratchCardPurchaseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.e_scrtch_card_purchase.success.EScratchSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.recharge.RechargeReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.activation.ActivationReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.c2c.C2CReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.esim.EsimReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.new_sim.NewSimActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.commission.CommissionReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.commission.CommissionDetailsReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.sim.SimRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.sim.SimPlaceRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.add_balance.AddBalanceActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.add_balance.AddBalanceRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.profile.MyProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.profile.ChangePasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.profile.ChangePasswordOTPVerificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.profile.ChangePasswordResetActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.profile.manage_device.DeviceManagementActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.profile.RetailerQrActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.profile.QrSettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.sim.SimRequestSentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.more.dsr_rating.MoreDsrInputRatingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.notification.NotificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.more.ChangeELPinActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.mnp.MnpSimActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.success.SimSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.SimSuccessRechargeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.SimSuccessUberizationRechargeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.SimOTPActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.SimFTRSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.SimFTRSuccessUberizationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.digital_acquisition.DigitalAcquisitionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.cyn.CYNActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_module.dashboard.AssistDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_module.retailer_info.RetailerInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_module.report.AssistReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_reactivation.SimReactivationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_replacement_corporate.SimReplacementCorporateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_replacement_corporate.SimReplacementCorporateOtpSentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_deregistration.SimDeRegistrationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.dob_update.SimDOBUpdateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustNothing|stateHidden" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_individual_nation_id.SimOwnershipTransferIndividualNationIDActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_transfer_nid_owner_not_present.SimOwnershipTransferIndividualNationIDOwnerNotPresentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_transfer_corporate_to_individual_whitelisted.SimOwnershipTransferCorporateToIndividualWhiteListedActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_transfer_corporate_to_individual_otp.SimOwnershipTransferCorporateToIndividualOTPActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.corporate_to_individual_nid_bind.CorporateToIndividualNIDBindActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_replacement_individual_not_verified.SimReplacementCorporateIndividualNotVerifiedActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_replacement_individual_nid.SimReplacementIndividualActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_replacement_rssp_agent.SimReplacementRsspAgentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.posonder_sim.PosonderPackageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.posonder_sim.PosonderSimTypeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.posonder_sim.PosonderSimPreperationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.posonder_sim.PosonderSimPurchaseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.posonder_sim.PosonderEtsafActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.etsaf_update.EtsafUpdateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.etsaf_update.EtsafActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.only_verify.OnlyVerificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.only_verify.OnlyVerifyTypeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.deregistration.DeRegistrationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.deregistration_legacy.DeRegistrationLegacyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_module.grid_check_in.grid_selection.GridCheckInActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_module.grid_check_in.gird_list.GridListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_module.grid_check_in.grid_info.GridInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_module.grid_check_in.grid_map.GridMapActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_module.grid_check_in.grid_result.GridResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.access_management.request.AccessManagementActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.access_management.generate_qr.AccessManagementQrActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.access_management.device_member.AccessManagementDeviceActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.access_management.device_member.AccessManagementMemberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.approval_summary.ApprovalSummaryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.approval_summary.details.ApprovalSummaryDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.approval_summary.details.ApprovalDocPreviewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.visa_expiry.VisaExpiryInputActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.visa_expiry.VisaExpiryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ApprovalRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.CommonOTPVerificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.death_case.DeathCaseInputActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.death_case.DeathCaseExecutionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.death_case.DeathCaseInformationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.death_case.DeathCaseRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.sim_stock_report.stock_and_transaction.SimStockActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.sim_stock_report.sim_details.SimReplacementKitDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.sim_stock_report.sim_serial.SimReplacementKitSerialActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.flash_offer.FlashOfferActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.c2c.C2CUpdateReportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.youtube_player.YoutubePlayerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.face_detection.FaceActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.qr_detection.QrActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.nid_capture.NidCaptureActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.commission.CommissionReportDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.image_preview.ImagePreviewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.assist_sim_sale.AssistSimActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.reports.activation.ActivationReportUpdateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_different_location_journey.OwnerShipDifferentLocationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_different_location_journey.CurrentOwnerVerifyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_different_location_journey.CurrentOwnerNewOwnerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_different_location_journey.OwnershipOTPActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_different_location_journey.NewOwnerVerifyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_different_location_journey.NewOwnerEtsafActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_same_location_journey.OwnerShipSelectionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_same_location_journey.OwnershipSecondUserEtsafActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_replacement_corporate.SimReplacementByKCPActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.corporate_to_individual_nid_bind.CorporateToIndividualNIDBindExecutionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.e_sim.ESimActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.e_sim.ESimReplacementActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.campaign_lib.CampaignLibActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.dashboard.profile.multiple_number_add.AddPackNumberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_dereg_number_reactivation.SimDeregNumberReactivationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.uberization.request_list.UberizationSimRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.uberization.club_request_list.UberizationClubRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.uberization.request_details.UberizationRequestDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.uberization.request_reassign.UberizationReassignActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.uberization.wifi_request_list.UberizationWifiRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.uberization.wifi_request_details.UberizationWifiRequestDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.wifi_journey.WifiRequestActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.wifi_journey.WifiPurchaseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.wifi_journey.WifiPaymentReceivedActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.wifi_journey.SimPaymentReceivedActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.wifi_journey.WithOTPVerifyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.wifi_journey.WifiSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.digital_acquisition_uberization.DigitalAcquisitionUberizationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_transfer_uberization.CurrentOwnerVerifyUberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.ownership_transfer_uberization.OwnershipSecondUserUberEtsafActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.success_uberization.SimSuccessUberizationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.sim_replacement_uberization.SimReplacementUberizationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.e_sim_uberization.ESimReplacementUberizationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.mnp_uberization.MnpSimUberizationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.WithOTPSelectionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.sim_module.e_sim_uberization.ESimUberizationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="bd.com.robi.redcube.ui.uberization.wifi_request_list.WifiSelfOrderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:theme="@style/Theme.Redcube.IncomingRequest"
+            android:name="bd.com.robi.redcube.ui.uberization.notification.UberizationIncomingRequestActivity"
+            android:exported="false"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true" />
+        <activity
+            android:name="com.facemarshal.robi.auth.sdk.AuthActivity"
+            android:configChanges="orientation|screenSize"
+            android:enableOnBackInvokedCallback="false" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:authorities="bd.com.robi.redcube.provider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <service
+            android:name="bd.com.robi.redcube.firebase.RedcubeFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
+        <activity
+            android:name="com.facemarshal.robi.sdk.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.facemarshal.robi.sdk.FaceAttendanceActivity"
+            android:configChanges="orientation|screenSize" />
+        <meta-data
+            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+            android:value="GlideModule" />
+        <service
+            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+            android:exported="false"
+            android:directBootAware="true">
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.vision.face.internal.FaceRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+        <provider
+            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+            android:exported="false"
+            android:authorities="bd.com.robi.redcube.mlkitinitprovider"
+            android:initOrder="99" />
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false"
+            android:directBootAware="true">
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.messaging.ktx.FirebaseMessagingKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
+            <intent-filter>
+                <action
+                    android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="false"
+            android:directBootAware="true">
+            <intent-filter
+                android:priority="-500">
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false" />
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:exported="false"
+            android:authorities="bd.com.robi.redcube.firebaseinitprovider"
+            android:initOrder="100"
+            android:directBootAware="true" />
+        <service
+            android:name="androidx.camera.core.impl.MetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+        </service>
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="false" />
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:exported="false"
+            android:authorities="bd.com.robi.redcube.androidx-startup">
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+        </provider>
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false"
+            android:directBootAware="true" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <receiver
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            android:permission="android.permission.DUMP"
+            android:enabled="true"
+            android:exported="true"
+            android:directBootAware="false">
+            <intent-filter>
+                <action
+                    android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="androidx.profileinstaller.action.SKIP_FILE" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+            android:exported="false">
+            <meta-data
+                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+                android:value="cct" />
+        </service>
+        <service
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false" />
+        <receiver
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+            android:exported="false" />
+    </application>
+</manifest>

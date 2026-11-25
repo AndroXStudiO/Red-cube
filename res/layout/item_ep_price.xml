@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/clItemBg"
+    android:background="@drawable/bg_pin"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:gravity="center_vertical"
+        android:id="@id/tvTitle"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12dp"
+        android:layout_marginBottom="@dimen/_12dp"
+        android:layout_marginStart="@dimen/_16dp"
+        app:layout_constraintEnd_toStartOf="@id/tvValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:id="@id/tvValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12dp"
+        android:layout_marginBottom="@dimen/_12dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:id="@id/viewBelow"
+        android:background="@color/black_100"
+        android:layout_width="0.0dip"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        app:layout_constraintEnd_toEndOf="@id/tvValue"
+        app:layout_constraintStart_toStartOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/green_600"
+        android:gravity="center_vertical"
+        android:id="@id/tvCommission"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_12dp"
+        android:drawablePadding="@dimen/_4dp"
+        android:drawableStart="@drawable/ic_commission_offer"
+        android:layout_marginStart="@dimen/_20dp"
+        android:drawableTint="@color/green_600"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvCommissionValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewBelow" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/green_600"
+        android:id="@id/tvCommissionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_12dp"
+        android:layout_marginEnd="16.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewBelow" />
+</androidx.constraintlayout.widget.ConstraintLayout>

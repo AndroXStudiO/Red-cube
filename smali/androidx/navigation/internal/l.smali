@@ -1,0 +1,171 @@
+.class public final Landroidx/navigation/internal/l;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
+.implements LMa/a;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Iterator<",
+        "LH2/w;",
+        ">;",
+        "LMa/a;"
+    }
+.end annotation
+
+
+# instance fields
+.field public t:I
+
+.field public u:Z
+
+.field public final synthetic v:Landroidx/navigation/internal/m;
+
+
+# direct methods
+.method public constructor <init>(Landroidx/navigation/internal/m;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Landroidx/navigation/internal/l;->v:Landroidx/navigation/internal/m;
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Landroidx/navigation/internal/l;->t:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final hasNext()Z
+    .locals 3
+
+    iget v0, p0, Landroidx/navigation/internal/l;->t:I
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    iget-object v2, p0, Landroidx/navigation/internal/l;->v:Landroidx/navigation/internal/m;
+
+    iget-object v2, v2, Landroidx/navigation/internal/m;->b:LZ/i0;
+
+    invoke-virtual {v2}, LZ/i0;->l()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_0
+
+    return v1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 3
+
+    invoke-virtual {p0}, Landroidx/navigation/internal/l;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/navigation/internal/l;->u:Z
+
+    iget-object v1, p0, Landroidx/navigation/internal/l;->v:Landroidx/navigation/internal/m;
+
+    iget-object v1, v1, Landroidx/navigation/internal/m;->b:LZ/i0;
+
+    iget v2, p0, Landroidx/navigation/internal/l;->t:I
+
+    add-int/2addr v2, v0
+
+    iput v2, p0, Landroidx/navigation/internal/l;->t:I
+
+    invoke-virtual {v1, v2}, LZ/i0;->n(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, LH2/w;
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final remove()V
+    .locals 5
+
+    iget-boolean v0, p0, Landroidx/navigation/internal/l;->u:Z
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroidx/navigation/internal/l;->v:Landroidx/navigation/internal/m;
+
+    iget-object v0, v0, Landroidx/navigation/internal/m;->b:LZ/i0;
+
+    iget v1, p0, Landroidx/navigation/internal/l;->t:I
+
+    invoke-virtual {v0, v1}, LZ/i0;->n(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, LH2/w;
+
+    const/4 v2, 0x0
+
+    iput-object v2, v1, LH2/w;->v:LH2/z;
+
+    iget v1, p0, Landroidx/navigation/internal/l;->t:I
+
+    iget-object v2, v0, LZ/i0;->v:[Ljava/lang/Object;
+
+    aget-object v3, v2, v1
+
+    sget-object v4, LZ/j0;->a:Ljava/lang/Object;
+
+    if-eq v3, v4, :cond_0
+
+    aput-object v4, v2, v1
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, v0, LZ/i0;->t:Z
+
+    :cond_0
+    add-int/lit8 v1, v1, -0x1
+
+    iput v1, p0, Landroidx/navigation/internal/l;->t:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroidx/navigation/internal/l;->u:Z
+
+    return-void
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "You must call next() before you can remove an element"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method

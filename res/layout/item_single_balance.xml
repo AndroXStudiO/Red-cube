@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@drawable/bg_single_balance"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4dp"
+    android:minHeight="@dimen/_32dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.5" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@id/ivBrand"
+        android:layout_width="@dimen/_14dp"
+        android:layout_height="@dimen/_14dp"
+        android:layout_marginStart="@dimen/_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_brand_robi" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_800"
+        android:gravity="start|center"
+        android:id="@id/tvMsisdn"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:layout_marginStart="8.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineMiddle"
+        app:layout_constraintStart_toEndOf="@id/ivBrand"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@id/ivTaka"
+        android:layout_width="@dimen/_8dp"
+        android:layout_height="@dimen/_12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvBalance"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guidelineMiddle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_taka" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_13sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:gravity="center"
+        android:id="@id/tvBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:layout_marginStart="2.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/ivTaka"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@id/ivLowBalance"
+        android:paddingTop="2.0dip"
+        android:layout_width="20.0dip"
+        android:layout_height="20.0dip"
+        android:layout_marginEnd="16.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivAddBalance"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/tvBalance"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_low_balance" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@id/ivAddBalance"
+        android:layout_width="@dimen/_18dp"
+        android:layout_height="@dimen/_18dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_add_balance" />
+</androidx.constraintlayout.widget.ConstraintLayout>

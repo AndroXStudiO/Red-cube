@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    android:id="@id/llTabs"
+    android:background="@color/app_bar_bg"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_13sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:gravity="center"
+            android:id="@id/tvTabOrderRequest"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/_44dp"
+            android:text="Order Request" />
+        <View
+            android:layout_gravity="center_horizontal"
+            android:id="@id/vIndicatorOrderRequest"
+            android:background="@drawable/tab_indicator"
+            android:visibility="visible"
+            android:layout_width="40.0dip"
+            android:layout_height="3.0dip" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_13sp"
+            android:textColor="@color/black_500"
+            android:gravity="center"
+            android:id="@id/tvTabCompleted"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/_44dp"
+            android:text="Completed" />
+        <View
+            android:layout_gravity="center_horizontal"
+            android:id="@id/vIndicatorCompleted"
+            android:background="@drawable/tab_indicator"
+            android:visibility="invisible"
+            android:layout_width="40.0dip"
+            android:layout_height="3.0dip" />
+    </LinearLayout>
+</LinearLayout>

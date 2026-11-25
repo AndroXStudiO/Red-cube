@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bg_common_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintVertical_bias="1.0">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineStartMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_16dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineEndMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/clRechargeButton"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.google.android.material.button.MaterialButton
+                android:id="@id/btnRecharge"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_43dp"
+                android:layout_margin="@dimen/_2dp"
+                android:layout_weight="1.0"
+                android:insetTop="0.0dip"
+                android:insetBottom="0.0dip"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/_32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Button_Red_Body.RechargePanel" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textColor="@color/black_500"
+                android:gravity="center"
+                android:id="@id/btnBack"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_48dp"
+                android:layout_marginTop="@dimen/_8dp"
+                android:layout_weight="1.0"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@id/progress_indicator_container"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_13dp"
+        android:baselineAligned="true"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/llNewRequest"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_marginEnd="@dimen/_2dp">
+            <View
+                android:id="@id/step1"
+                android:background="@drawable/bg_rounded_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_4dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_10sp"
+                android:textColor="@color/black_800"
+                android:gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2dp"
+                android:text="@string/tab_new_request" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/llPendingList"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_marginStart="@dimen/_1dp"
+            android:layout_marginEnd="@dimen/_1dp">
+            <View
+                android:id="@id/step2"
+                android:background="@drawable/bg_rounded_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_4dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_10sp"
+                android:textColor="@color/black_800"
+                android:gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2dp"
+                android:text="@string/tab_pending_list" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/llApprovedList"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_marginStart="@dimen/_2dp">
+            <View
+                android:id="@id/step3"
+                android:background="@drawable/gradient_progress"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_4dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_10sp"
+                android:textColor="@color/black_800"
+                android:gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2dp"
+                android:text="@string/tab_approved_list" />
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@id/pagerBrandWiseRechargeHistory"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_indicator_container" />
+</androidx.constraintlayout.widget.ConstraintLayout>

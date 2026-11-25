@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@drawable/bg_common_bottom"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    app:layout_constrainedHeight="true"
+    app:layout_constraintVertical_bias="1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineStartMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineEndMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/_16dp" />
+    <View
+        android:id="@id/view2"
+        android:background="@drawable/bg_bottom_sheet_header_shape"
+        android:layout_width="@dimen/_32dp"
+        android:layout_height="4.0dip"
+        android:layout_marginTop="@dimen/_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@id/ivClose"
+        android:layout_width="@dimen/_24dp"
+        android:layout_height="@dimen/_24dp"
+        android:layout_marginTop="@dimen/_13dp"
+        android:layout_marginEnd="@dimen/_19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_grey_close" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clmiddle"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/view2"
+        app:layout_constraintVertical_bias="0.0">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:gravity="center"
+            android:id="@id/recycleView"
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintVertical_bias="0.0" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintTop_toBottomOf="@id/recycleView"
+            app:layout_constraintVertical_bias="1.0">
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineStartMarginBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="@dimen/_0dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineEndMarginBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="@dimen/_0dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:id="@id/titleText"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32dp"
+                android:text="Are you sure you want to de-register"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_700"
+                android:gravity="center"
+                android:id="@id/headerText"
+                android:visibility="gone"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4dp"
+                android:text="Customer will not be able to use this number anymore.Customer will not be able to use this number anymore."
+                android:layout_marginStart="@dimen/_30dp"
+                android:layout_marginEnd="@dimen/_30dp"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEndMarginBottom"
+                app:layout_constraintStart_toStartOf="@id/guidelineStartMarginBottom"
+                app:layout_constraintTop_toBottomOf="@id/titleText" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textColor="@color/black_700"
+                android:id="@id/termsText"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32dp"
+                android:text="By proceeding you agree to Robi's terms and conditions"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/headerText" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@id/clRechargeButton"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24dp"
+                android:layout_marginBottom="@dimen/_36dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEndMarginBottom"
+                app:layout_constraintStart_toStartOf="@id/guidelineStartMarginBottom"
+                app:layout_constraintTop_toBottomOf="@id/termsText">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textColor="@color/black_500"
+                    android:gravity="center"
+                    android:id="@id/btnBack"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/_48dp"
+                    android:layout_margin="@dimen/_2dp"
+                    android:layout_weight="1.0"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@id/btnRecharge"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/_43dp"
+                    android:layout_margin="@dimen/_2dp"
+                    android:layout_weight="1.0"
+                    android:insetTop="0.0dip"
+                    android:insetBottom="0.0dip"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/_32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/Button_Red_Body.RechargePanel" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

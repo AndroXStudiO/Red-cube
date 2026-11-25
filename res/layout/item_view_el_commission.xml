@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@id/cardView"
+    android:layout_width="fill_parent"
+    android:layout_height="53.0dip"
+    android:layout_marginBottom="@dimen/_12dp"
+    android:layout_marginStart="@dimen/_8dp"
+    android:layout_marginEnd="@dimen/_8dp"
+    app:cardCornerRadius="@dimen/_8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingLeft="@dimen/_12dp"
+        android:paddingTop="@dimen/_8dp"
+        android:paddingRight="@dimen/_12dp"
+        android:paddingBottom="@dimen/_8dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginStart="@dimen/_8dp"
+        android:layout_marginEnd="@dimen/_8dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clBrandRobi"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineStartMarginRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="343.0dip" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineMiddleMarginRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="@dimen/_100dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineEndMarginRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="@dimen/_12dp" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/ivBrandRobi"
+                android:layout_width="24.0dip"
+                android:layout_height="24.0dip"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guidelineStartMarginRobi"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_brand_robi" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:id="@id/textRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Robi"
+                android:layout_marginStart="8.0dip"
+                android:layout_marginEnd="8.0dip"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivBrandRobi"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/ivRobiTaka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvAmountRobi"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_taka" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:id="@id/tvAmountRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1270"
+                android:layout_marginStart="@dimen/_2dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineMiddleMarginRobi"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/ivRobiCommssion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvComissionRobi"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_commission_offer" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_600"
+                android:id="@id/tvComissionRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="316"
+                android:layout_marginStart="@dimen/_4dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEndMarginRobi"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

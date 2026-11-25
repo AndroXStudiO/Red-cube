@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/main"
+    android:background="@color/base_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineStartMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineEndMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/_16dp" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@id/ivSuccess"
+        android:layout_width="62.0dip"
+        android:layout_height="62.0dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_success_animation" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_26sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:gravity="center_horizontal"
+        android:id="@id/txtPurchaseSuccessful"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:text="@string/text_request_sent"
+        android:layout_marginStart="@dimen/_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivSuccess" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textColor="@color/grey_800"
+        android:gravity="center_horizontal"
+        android:id="@id/txtEmeregency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_48dp"
+        android:text="@string/text_emergency"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtPurchaseSuccessful" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/dsr_info"
+        android:background="@drawable/bg_rectangle_shape"
+        android:paddingBottom="@dimen/_12dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtEmeregency">
+        <bd.com.robi.redcube.custom_view.CircularImageView
+            android:id="@id/imageViewProfile"
+            android:background="@drawable/ic_profile_placeholder"
+            android:layout_width="76.0dip"
+            android:layout_height="76.0dip"
+            android:layout_marginTop="@dimen/_12dp"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="@dimen/_12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textColor="@color/grey_800"
+            android:gravity="center_horizontal"
+            android:id="@id/txtDesignation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:text="Manager"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2dp"
+            android:text="Humayun Kabir"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+            app:layout_constraintTop_toBottomOf="@id/txtDesignation" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/txtMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2dp"
+            android:text=" ০১৮৮৮১২৩৪৫৬"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+            app:layout_constraintTop_toBottomOf="@id/txtName" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:id="@id/txtAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2dp"
+            android:text="শাহিন টেলিকম, সাভার, ঢাকা"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+            app:layout_constraintTop_toBottomOf="@id/txtMobile" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clCall"
+            android:background="@drawable/bg_red_button_shape"
+            android:layout_width="83.0dip"
+            android:layout_height="32.0dip"
+            android:layout_marginTop="@dimen/_12dp"
+            android:layout_marginBottom="@dimen/_12dp"
+            app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+            app:layout_constraintTop_toBottomOf="@id/txtAddress">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:id="@id/txtCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_call"
+                android:drawablePadding="@dimen/_6dp"
+                android:drawableStart="@drawable/ic_profile_call"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clSms"
+            android:background="@drawable/bg_red_button_shape"
+            android:layout_width="83.0dip"
+            android:layout_height="32.0dip"
+            android:layout_marginTop="@dimen/_12dp"
+            android:layout_marginStart="@dimen/_9dp"
+            app:layout_constraintStart_toEndOf="@id/clCall"
+            app:layout_constraintTop_toBottomOf="@id/txtAddress">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:id="@id/txtSms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_sms"
+                android:drawablePadding="@dimen/_6dp"
+                android:drawableStart="@drawable/ic_sms"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textColor="@color/black_500"
+        android:gravity="center"
+        android:id="@id/btnCard"
+        android:layout_width="0.0dip"
+        android:layout_height="@dimen/_48dp"
+        android:layout_marginTop="@dimen/_24dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:text="@string/btn_return_to_home_text"
+        android:textAllCaps="false"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dsr_info" />
+</androidx.constraintlayout.widget.ConstraintLayout>

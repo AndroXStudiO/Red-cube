@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/clMain"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:textSize="@dimen/_13sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:id="@id/kpiTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:text="KPI 1"
+        android:layout_marginStart="@dimen/_12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:textSize="@dimen/_10sp"
+        android:textColor="@color/black_800"
+        android:id="@id/kpiDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Updated till 10 Apr, 2025"
+        android:layout_marginEnd="@dimen/_12dp"
+        app:layout_constraintBottom_toBottomOf="@id/kpiTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/kpiTitle" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@id/headerRowContainer"
+        android:background="@color/even_row_color"
+        android:paddingTop="@dimen/_8dp"
+        android:paddingBottom="@dimen/_8dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:paddingStart="@dimen/_12dp"
+        android:paddingEnd="@dimen/_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kpiTitle">
+        <TextView
+            android:textSize="@dimen/_8sp"
+            android:textColor="@color/black_600"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/target"
+            android:maxLines="2"
+            android:layout_weight="1.0"
+            android:layout_marginStart="@dimen/_4dp"
+            android:layout_marginEnd="@dimen/_4dp" />
+        <TextView
+            android:textSize="@dimen/_8sp"
+            android:textColor="@color/black_600"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/ach"
+            android:maxLines="2"
+            android:layout_weight="1.0" />
+        <TextView
+            android:textSize="@dimen/_8sp"
+            android:textColor="@color/black_600"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/achievement_percent"
+            android:maxLines="2"
+            android:layout_weight="1.0"
+            android:layout_marginStart="@dimen/_4dp"
+            android:layout_marginEnd="@dimen/_4dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@id/dataRowContainer"
+        android:paddingTop="@dimen/_8dp"
+        android:paddingBottom="@dimen/_8dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_12dp"
+        android:paddingEnd="@dimen/_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerRowContainer">
+        <TextView
+            android:textSize="@dimen/_10sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="start"
+            android:id="@id/dataTarget"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:layout_weight="1.0"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_marginEnd="@dimen/_4dp" />
+        <TextView
+            android:textSize="@dimen/_10sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="center"
+            android:id="@id/dataAch"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:layout_weight="1.0" />
+        <TextView
+            android:textSize="@dimen/_10sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="end"
+            android:id="@id/dataMtdAch"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:layout_weight="1.0"
+            android:layout_marginStart="@dimen/_4dp"
+            android:layout_marginEnd="@dimen/_8dp" />
+    </LinearLayout>
+    <View
+        android:id="@id/viewBelow"
+        android:background="@color/even_row_color"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dataRowContainer"
+        app:layout_goneMarginTop="0.0dip" />
+</androidx.constraintlayout.widget.ConstraintLayout>

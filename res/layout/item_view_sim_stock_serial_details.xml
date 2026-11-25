@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/clMain"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/_30dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clHeaderBrand"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@id/llHeaderBrandEl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textColor="@color/black_800"
+                android:gravity="center"
+                android:id="@id/textOrder"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:text="Order"
+                android:layout_weight="0.5" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textColor="@color/black_800"
+                android:gravity="center"
+                android:id="@id/textSIMSerial"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:text="SIM Serial"
+                android:layout_weight="1.0" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textColor="@color/black_800"
+                android:gravity="center"
+                android:id="@id/textNumber"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:text="Number"
+                android:layout_weight="1.0" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_gravity="center_vertical"
+                android:id="@id/ivCopy"
+                android:layout_width="@dimen/_16dp"
+                android:layout_height="@dimen/_16dp"
+                android:layout_weight="0.5"
+                android:layout_marginStart="@dimen/_8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_copy" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

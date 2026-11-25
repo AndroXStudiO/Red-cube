@@ -1,0 +1,83 @@
+.class public abstract LF7/g0;
+.super LF7/K;
+.source "SourceFile"
+
+
+# instance fields
+.field public b:Z
+
+
+# direct methods
+.method public constructor <init>(LF7/G0;)V
+    .locals 1
+
+    invoke-direct {p0, p1}, LF7/V0;-><init>(LF7/G0;)V
+
+    iget-object p1, p0, LF7/V0;->a:LF7/G0;
+
+    iget v0, p1, LF7/G0;->E:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p1, LF7/G0;->E:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final h()V
+    .locals 2
+
+    iget-boolean v0, p0, LF7/g0;->b:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Not initialized"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final i()V
+    .locals 2
+
+    iget-boolean v0, p0, LF7/g0;->b:Z
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, LF7/g0;->j()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, LF7/V0;->a:LF7/G0;
+
+    invoke-virtual {v0}, LF7/G0;->e()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, LF7/g0;->b:Z
+
+    :cond_0
+    return-void
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Can\'t initialize twice"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public abstract j()Z
+.end method

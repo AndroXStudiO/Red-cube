@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/main"
+    android:background="@color/base_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineStartMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineEndMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clmiddle"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivSuccess"
+            android:layout_width="72.0dip"
+            android:layout_height="72.0dip"
+            android:layout_marginTop="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_success_animation" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="center_horizontal"
+            android:id="@id/txtPurchaseSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:text="@string/congratulations_txt"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivSuccess" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:id="@id/txtPurchaseMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="Robi Wifi has been activated successfully"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPurchaseSuccessful" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:id="@id/txtCollectAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPurchaseMsg" />
+        <LinearLayout
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:id="@id/llReqauestId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCollectAmount">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_500"
+                android:gravity="center_horizontal"
+                android:id="@id/txtReqId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/request_id"
+                android:layout_marginStart="@dimen/_8dp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:gravity="center_horizontal"
+                android:id="@id/txtReqIdVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8dp" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_gravity="center_vertical"
+                android:id="@id/ivCopy"
+                android:layout_width="@dimen/_16dp"
+                android:layout_height="@dimen/_16dp"
+                android:layout_marginStart="@dimen/_8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_copy" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clRechargePanel"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_16dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@id/btnRecharge"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/clmiddle"
+        app:layout_constraintVertical_bias="0.0">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:id="@id/clNumberInfo"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="01X XX XXXXXX is activated successfully"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_gravity="center_vertical"
+                android:id="@id/ivQuick"
+                android:layout_width="@dimen/_16dp"
+                android:layout_height="@dimen/_16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_quick" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:gravity="center_horizontal"
+                android:id="@id/txtQuickRecharge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quick_recharge"
+                android:layout_marginStart="@dimen/_4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivQuick"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:gravity="center_horizontal"
+                android:id="@id/txtCustomerNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01X XX XXXXXX"
+                android:drawableStart="@drawable/ic_phone_small"
+                android:layout_marginStart="@dimen/_8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@id/rvRechargeSuccess"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clNumberInfo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textColor="@color/black_500"
+        android:gravity="center"
+        android:id="@id/btnRecharge"
+        android:layout_width="0.0dip"
+        android:layout_height="@dimen/_48dp"
+        android:layout_marginTop="@dimen/_12dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:text="@string/btn_return_to_home_text"
+        android:textAllCaps="false"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCompleteOrder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.button.MaterialButton
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:id="@id/btnCompleteOrder"
+        android:layout_width="0.0dip"
+        android:layout_height="@dimen/_48dp"
+        android:layout_marginTop="@dimen/_64dp"
+        android:layout_marginBottom="@dimen/_32dp"
+        android:minHeight="40.0dip"
+        android:text="Complete Order"
+        android:insetTop="0.0dip"
+        android:insetBottom="0.0dip"
+        android:textAllCaps="false"
+        android:layout_marginStart="@dimen/_6dp"
+        android:backgroundTint="@color/easy_plan_btn_tint"
+        app:cornerRadius="24.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

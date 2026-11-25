@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clOtp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_16dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+        <bd.com.robi.redcube.custom_view.inputViewPin.OTPEditText
+            android:id="@id/etPin1"
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            android:inputType="number"
+            android:layout_marginEnd="@dimen/_6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toStartOf="@id/etPin2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/styleEditTextPin" />
+        <bd.com.robi.redcube.custom_view.inputViewPin.OTPEditText
+            android:id="@id/etPin2"
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            android:layout_marginEnd="@dimen/_6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toStartOf="@id/etPin3"
+            app:layout_constraintStart_toEndOf="@id/etPin1"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/styleEditTextPin" />
+        <bd.com.robi.redcube.custom_view.inputViewPin.OTPEditText
+            android:id="@id/etPin3"
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            android:layout_marginEnd="@dimen/_6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toStartOf="@id/etPin4"
+            app:layout_constraintStart_toEndOf="@id/etPin2"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/styleEditTextPin" />
+        <bd.com.robi.redcube.custom_view.inputViewPin.OTPEditText
+            android:id="@id/etPin4"
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            android:layout_marginEnd="@dimen/_6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toStartOf="@id/etPin5"
+            app:layout_constraintStart_toEndOf="@id/etPin3"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/styleEditTextPin" />
+        <bd.com.robi.redcube.custom_view.inputViewPin.OTPEditText
+            android:id="@id/etPin5"
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            android:layout_marginEnd="@dimen/_6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toStartOf="@id/etPin6"
+            app:layout_constraintStart_toEndOf="@id/etPin4"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/styleEditTextPin" />
+        <bd.com.robi.redcube.custom_view.inputViewPin.OTPEditText
+            android:id="@id/etPin6"
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/etPin5"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/styleEditTextPin" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clPasswordError"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8.0dip"
+        android:layout_marginBottom="4.0dip"
+        app:layout_constraintTop_toBottomOf="@id/inputViewOTP">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivPassword"
+            android:layout_width="@dimen/_16dp"
+            android:layout_height="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginStart="16.0dip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_error_info_circle" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textStyle="normal"
+            android:textColor="@color/error_500"
+            android:gravity="start|center"
+            android:id="@id/tvErrorPassword"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="@dimen/_5dp"
+            android:text="@string/please_enter_the_correct_otp"
+            android:layout_marginStart="@dimen/_8dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/ivPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivPassword"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

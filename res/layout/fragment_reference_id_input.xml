@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineStartMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="@dimen/_16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@id/guidelineEndMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/_16dp" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:id="@id/tvMobileNumber"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/enter_reference_id"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@id/tilRefId"
+        android:background="@drawable/text_field_background"
+        android:paddingTop="@dimen/_2dp"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12dp"
+        android:minHeight="@dimen/_52dp"
+        android:hint="@string/enter_reference_id"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxCollapsedPaddingTop="@dimen/_4dp"
+        app:boxStrokeWidth="0.0dip"
+        app:boxStrokeWidthFocused="0.0dip"
+        app:hintTextAppearance="@style/CustomHintText"
+        app:hintTextColor="@color/black_500"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+        app:layout_constraintTop_toBottomOf="@id/tvMobileNumber">
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="@dimen/_14sp"
+            android:id="@id/etRefId"
+            android:background="@android:color/transparent"
+            android:paddingBottom="2.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:maxLength="10"
+            android:inputType="textCapCharacters" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bg_common_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_8dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineStartMargin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_16dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineEndMargin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@id/clRechargeButton"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin2"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMargin2"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textColor="@color/black_500"
+                android:gravity="center"
+                android:id="@id/btnBack"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:layout_weight="1.0"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <com.google.android.material.button.MaterialButton
+                android:textSize="@dimen/_14sp"
+                android:id="@id/btnRecharge"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_48dp"
+                android:text="@string/proceed"
+                android:layout_weight="1.0"
+                android:insetTop="0.0dip"
+                android:insetBottom="0.0dip"
+                android:textAllCaps="false"
+                android:elevation="0.0dip"
+                android:stateListAnimator="@null"
+                app:cornerRadius="@dimen/_32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Button_Red_Body.RechargePanel" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

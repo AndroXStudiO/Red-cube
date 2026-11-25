@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/base_background"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineStartMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_16dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineEndMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:id="@id/guidelineTopMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.05" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:id="@id/guidelineTop_60_Margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.6" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:id="@id/guideline_25_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.25" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_16sp"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:id="@id/txtOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="0.0dip"
+            android:layout_marginTop="@dimen/_12dp"
+            android:text="@string/text_otp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+            app:layout_constraintTop_toTopOf="parent" />
+        <bd.com.robi.redcube.custom_view.inputViewPin.InputView6DigitOTP
+            android:id="@id/inputViewOTP"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24dp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+            app:layout_constraintTop_toBottomOf="@id/txtOtp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            android:id="@id/txtResendOtp"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24dp"
+            android:text="@string/text_resend_otp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+            app:layout_constraintTop_toBottomOf="@id/inputViewOTP" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@id/btnLogin"
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/_48dp"
+            android:layout_marginTop="@dimen/_32dp"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:text="@string/btn_submit"
+            android:insetTop="@dimen/_0dp"
+            android:insetBottom="@dimen/_0dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            app:cornerRadius="@dimen/_32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtResendOtp"
+            style="@style/Button_Red_Body.RechargePanel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

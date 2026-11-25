@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/even_row_color"
+    android:paddingBottom="@dimen/_16dp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:padding="@dimen/_16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attendance_details" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="@dimen/_12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:paddingTop="@dimen/_6dp"
+            android:paddingBottom="@dimen/_6dp"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/details"
+            android:layout_weight="50.0"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_4dp" />
+        <TextView
+            android:textSize="@dimen/_12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="center"
+            android:paddingTop="@dimen/_6dp"
+            android:paddingBottom="@dimen/_6dp"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/today"
+            android:layout_weight="25.0"
+            android:paddingStart="@dimen/_4dp"
+            android:paddingEnd="@dimen/_4dp" />
+        <TextView
+            android:textSize="@dimen/_12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:gravity="end"
+            android:paddingTop="@dimen/_6dp"
+            android:paddingBottom="@dimen/_6dp"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/mtd"
+            android:layout_weight="25.0"
+            android:paddingStart="@dimen/_4dp"
+            android:paddingEnd="@dimen/_16dp" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/rvAttendanceRows"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

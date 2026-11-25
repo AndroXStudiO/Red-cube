@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="20.0px"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@id/text_input"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30.0dip"
+            android:text="+88018"
+            android:inputType="text" />
+        <Button
+            android:id="@id/button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily Face Attendance"
+            android:layout_weight="1.0" />
+        <TextView
+            android:id="@id/editTextText"
+            android:paddingTop="100.0px"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="SDK Response:"
+            android:inputType="text" />
+        <TextView
+            android:id="@id/attendanceDataTextView"
+            android:background="#ffdddddd"
+            android:layout_width="fill_parent"
+            android:layout_height="300.0px"
+            android:layout_marginTop="10.0px"
+            android:text=""
+            android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

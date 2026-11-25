@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    android:height="14.0dip"
+    android:width="14.0dip"
+    android:viewportWidth="14.0"
+    android:viewportHeight="14.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M2.333,3.967C2.333,2.987 2.333,2.497 2.524,2.122C2.692,1.793 2.96,1.525 3.289,1.357C3.663,1.167 4.153,1.167 5.134,1.167H7.007C7.435,1.167 7.649,1.167 7.85,1.215C8.029,1.258 8.2,1.329 8.356,1.425C8.533,1.533 8.684,1.684 8.987,1.987L10.847,3.847C11.149,4.149 11.301,4.301 11.409,4.477C11.505,4.634 11.576,4.804 11.618,4.983C11.667,5.184 11.667,5.398 11.667,5.826V10.033C11.667,11.013 11.667,11.503 11.476,11.878C11.308,12.207 11.041,12.475 10.711,12.643C10.337,12.833 9.847,12.833 8.867,12.833H5.134C4.153,12.833 3.663,12.833 3.289,12.643C2.96,12.475 2.692,12.207 2.524,11.878C2.333,11.503 2.333,11.013 2.333,10.033V3.967Z"
+        android:strokeColor="@drawable/$ic_report_sim_card__0"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M5.25,6.417V9.917M5.25,9.917H8.75M5.25,9.917L8.75,6.417"
+        android:strokeColor="@drawable/$ic_report_sim_card__1"
+        android:strokeWidth="1.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

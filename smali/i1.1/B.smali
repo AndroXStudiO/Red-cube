@@ -1,0 +1,191 @@
+.class public final Li1/B;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Li1/x;
+
+
+# instance fields
+.field public final t:Li1/l;
+
+.field public final u:Li1/D;
+
+.field public final v:Li1/E;
+
+
+# direct methods
+.method public constructor <init>(Li1/l;Li1/D;Li1/E;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Li1/B;->t:Li1/l;
+
+    iput-object p2, p0, Li1/B;->u:Li1/D;
+
+    iput-object p3, p0, Li1/B;->v:Li1/E;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final I(I)I
+    .locals 1
+
+    iget-object v0, p0, Li1/B;->t:Li1/l;
+
+    invoke-interface {v0, p1}, Li1/l;->I(I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final J(I)I
+    .locals 1
+
+    iget-object v0, p0, Li1/B;->t:Li1/l;
+
+    invoke-interface {v0, p1}, Li1/l;->J(I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final M(J)Landroidx/compose/ui/layout/y;
+    .locals 5
+
+    sget-object v0, Li1/E;->t:Li1/E;
+
+    iget-object v1, p0, Li1/B;->u:Li1/D;
+
+    iget-object v2, p0, Li1/B;->v:Li1/E;
+
+    const/16 v3, 0x7fff
+
+    iget-object v4, p0, Li1/B;->t:Li1/l;
+
+    if-ne v2, v0, :cond_2
+
+    sget-object v0, Li1/D;->u:Li1/D;
+
+    if-ne v1, v0, :cond_0
+
+    invoke-static {p1, p2}, LG1/b;->g(J)I
+
+    move-result v0
+
+    invoke-interface {v4, v0}, Li1/l;->J(I)I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p1, p2}, LG1/b;->g(J)I
+
+    move-result v0
+
+    invoke-interface {v4, v0}, Li1/l;->I(I)I
+
+    move-result v0
+
+    :goto_0
+    invoke-static {p1, p2}, LG1/b;->c(J)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-static {p1, p2}, LG1/b;->g(J)I
+
+    move-result v3
+
+    :cond_1
+    new-instance p1, Li1/C;
+
+    invoke-direct {p1, v0, v3}, Li1/C;-><init>(II)V
+
+    return-object p1
+
+    :cond_2
+    sget-object v0, Li1/D;->u:Li1/D;
+
+    if-ne v1, v0, :cond_3
+
+    invoke-static {p1, p2}, LG1/b;->h(J)I
+
+    move-result v0
+
+    invoke-interface {v4, v0}, Li1/l;->u(I)I
+
+    move-result v0
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {p1, p2}, LG1/b;->h(J)I
+
+    move-result v0
+
+    invoke-interface {v4, v0}, Li1/l;->k0(I)I
+
+    move-result v0
+
+    :goto_1
+    invoke-static {p1, p2}, LG1/b;->d(J)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-static {p1, p2}, LG1/b;->h(J)I
+
+    move-result v3
+
+    :cond_4
+    new-instance p1, Li1/C;
+
+    invoke-direct {p1, v3, v0}, Li1/C;-><init>(II)V
+
+    return-object p1
+.end method
+
+.method public final k0(I)I
+    .locals 1
+
+    iget-object v0, p0, Li1/B;->t:Li1/l;
+
+    invoke-interface {v0, p1}, Li1/l;->k0(I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final n()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Li1/B;->t:Li1/l;
+
+    invoke-interface {v0}, Li1/l;->n()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final u(I)I
+    .locals 1
+
+    iget-object v0, p0, Li1/B;->t:Li1/l;
+
+    invoke-interface {v0, p1}, Li1/l;->u(I)I
+
+    move-result p1
+
+    return p1
+.end method

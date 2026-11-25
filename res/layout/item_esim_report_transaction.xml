@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:paddingTop="@dimen/_12dp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_13sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_900"
+        android:id="@id/tvNumber"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8dp"
+        app:layout_constraintEnd_toStartOf="@id/btnResend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_500"
+        android:id="@id/tvTime"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        app:layout_constraintEnd_toStartOf="@id/btnResend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNumber" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_500"
+        android:id="@id/tvType"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4dp"
+        android:layout_marginEnd="@dimen/_8dp"
+        app:layout_constraintEnd_toStartOf="@id/btnResend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
+    <com.google.android.material.button.MaterialButton
+        android:textSize="@dimen/_11sp"
+        android:textColor="@color/white"
+        android:id="@id/btnResend"
+        android:paddingLeft="@dimen/_16dp"
+        android:paddingRight="@dimen/_16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_28dp"
+        android:text="@string/resend"
+        android:insetTop="0.0dip"
+        android:insetBottom="0.0dip"
+        android:textAllCaps="false"
+        android:paddingHorizontal="@dimen/_16dp"
+        app:backgroundTint="@color/primary"
+        app:cornerRadius="@dimen/_16dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvNumber"
+        style="@style/Widget.MaterialComponents.Button" />
+    <View
+        android:id="@id/viewDivider"
+        android:background="@color/black_300"
+        android:layout_width="0.0dip"
+        android:layout_height="@dimen/_2dp"
+        android:layout_marginTop="@dimen/_12dp"
+        android:layerType="software"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvType" />
+</androidx.constraintlayout.widget.ConstraintLayout>

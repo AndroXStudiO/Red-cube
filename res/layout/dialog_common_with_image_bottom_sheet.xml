@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/bg_common_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintVertical_bias="1.0">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineStartMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_16dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineEndMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+        <View
+            android:id="@id/view2"
+            android:background="@drawable/bg_bottom_sheet_header_shape"
+            android:layout_width="@dimen/_32dp"
+            android:layout_height="4.0dip"
+            android:layout_marginTop="@dimen/_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivClose"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_24dp"
+            android:layout_marginTop="@dimen/_13dp"
+            android:layout_marginEnd="@dimen/_19dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_grey_close" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivImg"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            android:layout_marginTop="@dimen/_12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view2"
+            app:srcCompat="@drawable/ic_grey_close" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clmiddle"
+            android:paddingLeft="@dimen/_8dp"
+            android:paddingRight="@dimen/_8dp"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+            app:layout_constraintTop_toBottomOf="@id/ivImg">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:gravity="center_horizontal"
+                android:id="@id/tvTitle"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:text="@string/text_e_pin"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textColor="@color/black_700"
+                android:gravity="center_horizontal"
+                android:id="@id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4dp"
+                android:text="@string/text_subscriber_pin"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@id/clRechargeButton"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndMargin"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMargin"
+            app:layout_constraintTop_toBottomOf="@id/clmiddle">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textColor="@color/black_500"
+                android:gravity="center"
+                android:id="@id/btnBack"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_return_to_home_text"
+                android:layout_weight="1.0"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <com.google.android.material.button.MaterialButton
+                android:textSize="@dimen/_14sp"
+                android:id="@id/btnRecharge"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_43dp"
+                android:layout_margin="@dimen/_2dp"
+                android:text="@string/btn_recharge"
+                android:layout_weight="1.0"
+                android:insetTop="0.0dip"
+                android:insetBottom="0.0dip"
+                android:textAllCaps="false"
+                android:translationZ="1.0dip"
+                app:cornerRadius="@dimen/_32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/Button_Red_Body.RechargePanel" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

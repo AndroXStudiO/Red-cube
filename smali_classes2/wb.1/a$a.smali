@@ -1,0 +1,92 @@
+.class public final Lwb/a$a;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lwb/a;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "a"
+.end annotation
+
+
+# direct methods
+.method public static a(Ljava/io/InputStream;)Lwb/a;
+    .locals 3
+
+    new-instance v0, Ljava/io/DataInputStream;
+
+    invoke-direct {v0, p0}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
+
+    new-instance p0, LRa/d;
+
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    invoke-direct {p0, v2, v1, v2}, LRa/b;-><init>(III)V
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    const/16 v2, 0xa
+
+    invoke-static {p0, v2}, Lxa/p;->n(Ljava/lang/Iterable;I)I
+
+    move-result v2
+
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-virtual {p0}, LRa/b;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    move-object v2, p0
+
+    check-cast v2, LRa/c;
+
+    iget-boolean v2, v2, LRa/c;->v:Z
+
+    if-eqz v2, :cond_0
+
+    move-object v2, p0
+
+    check-cast v2, Lxa/C;
+
+    invoke-virtual {v2}, Lxa/C;->a()I
+
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v1}, Lxa/u;->f0(Ljava/util/Collection;)[I
+
+    move-result-object p0
+
+    array-length v0, p0
+
+    invoke-static {p0, v0}, Ljava/util/Arrays;->copyOf([II)[I
+
+    move-result-object p0
+
+    new-instance v0, Lwb/a;
+
+    invoke-direct {v0, p0}, Lwb/a;-><init>([I)V
+
+    return-object v0
+.end method

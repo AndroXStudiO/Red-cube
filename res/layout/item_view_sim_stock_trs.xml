@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:padding="@dimen/_8dp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/_1dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_13sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_900"
+        android:id="@id/tvSimType"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:text="Robi 4G Prepaid Replacement VLH S01_2022"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_900"
+        android:id="@id/tvAmount"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:text="২৫০"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_500"
+        android:id="@id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4dp"
+        android:text="Time:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSimType" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_500"
+        android:id="@id/tvTimeValue"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4dp"
+        android:text="16/03/2025"
+        android:layout_marginStart="@dimen/_2dp"
+        app:layout_constraintStart_toEndOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/tvSimType" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_500"
+        android:id="@id/tvQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2dp"
+        android:text="Quantity:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_500"
+        android:id="@id/tvQuantityValue"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2dp"
+        android:text="2"
+        android:layout_marginStart="@dimen/_4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvQuantity"
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_500"
+        android:id="@id/tvFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2dp"
+        android:text="From:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvQuantity" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_500"
+        android:id="@id/tvFromValue"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2dp"
+        android:text="1873478797 - Test DSR JIA"
+        android:layout_marginStart="@dimen/_4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvFrom"
+        app:layout_constraintTop_toBottomOf="@id/tvQuantity" />
+</androidx.constraintlayout.widget.ConstraintLayout>

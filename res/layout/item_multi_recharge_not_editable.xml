@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8dp"
+    app:cardCornerRadius="@dimen/_12dp"
+    app:cardElevation="@dimen/_2dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/_12dp"
+        android:paddingBottom="@dimen/_4dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_12dp"
+        android:paddingEnd="@dimen/_12dp">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:id="@id/guidelineStartMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_48dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clNumberInfo"
+            android:visibility="visible"
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginBottom="@dimen/_8dp"
+            app:layout_constraintEnd_toStartOf="@id/ivRemove"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/ivOperator"
+                android:layout_width="20.0dip"
+                android:layout_height="20.0dip"
+                android:scaleType="centerInside"
+                android:layout_marginStart="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_brand_robi" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:id="@id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/ivOperator"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/ivOperator"
+                app:layout_constraintTop_toTopOf="@id/ivOperator" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.65" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:id="@id/tvBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tvNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/guidelineMiddle"
+                app:layout_constraintTop_toTopOf="@id/tvNumber" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/ivRemove"
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_marginBottom="@dimen/_6dp"
+            android:scaleType="centerInside"
+            android:layout_marginEnd="@dimen/_8dp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineStartMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_remove_circle" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clLoan"
+            android:visibility="visible"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginBottom="@dimen/_8dp"
+            app:layout_constraintBottom_toTopOf="@id/cvPackageDetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clNumberInfo">
+            <include
+                android:id="@id/loanWarningLayout"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                layout="@layout/item_loan_warning" />
+            <include
+                android:id="@id/loanAddedLayout"
+                android:visibility="gone"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                layout="@layout/item_loan_added" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@id/cvPackageDetails"
+            android:visibility="visible"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8dp"
+            app:cardCornerRadius="@dimen/_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clLoan">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@color/multi_recharge_inside_offer"
+                android:padding="@dimen/_8dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textSize="@dimen/_14sp"
+                    android:textColor="@color/black_800"
+                    android:id="@id/tvPackageDescription"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="50 minutes + 2 GB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@id/ivCalendar"
+                    android:layout_width="16.0dip"
+                    android:layout_height="16.0dip"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:scaleType="centerInside"
+                    android:layout_marginEnd="@dimen/_4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPackageDescription"
+                    app:srcCompat="@drawable/ic_calender_offer" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textSize="@dimen/_12sp"
+                    android:textColor="@color/black_600"
+                    android:id="@id/tvValidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:text="3 days"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivCalendar"
+                    app:layout_constraintTop_toBottomOf="@id/tvPackageDescription" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textSize="@dimen/_14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black_800"
+                    android:id="@id/tvPackagePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳ 99"
+                    android:layout_marginStart="@dimen/_16dp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvValidity"
+                    app:layout_constraintStart_toEndOf="@id/tvValidity"
+                    app:layout_constraintTop_toTopOf="@id/tvValidity" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

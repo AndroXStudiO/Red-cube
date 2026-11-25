@@ -1,0 +1,683 @@
+.class public final Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;
+.super LP5/p;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LP5/p<",
+        "Lw3/k0;",
+        ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0008\u0007\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004J\u0017\u0010\u0008\u001a\u00020\u00072\u0006\u0010\u0006\u001a\u00020\u0005H\u0007\u00a2\u0006\u0004\u0008\u0008\u0010\t\u00a8\u0006\n"
+    }
+    d2 = {
+        "Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;",
+        "Ls3/h;",
+        "Lw3/k0;",
+        "<init>",
+        "()V",
+        "Lc6/a;",
+        "event",
+        "Lwa/A;",
+        "onMessageEvent",
+        "(Lc6/a;)V",
+        "app_prodRelease"
+    }
+    k = 0x1
+    mv = {
+        0x2,
+        0x0,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# static fields
+.field public static final synthetic O0:I
+
+
+# instance fields
+.field public J0:Ld5/m;
+
+.field public K0:Ljava/lang/String;
+
+.field public L0:Lbd/com/robi/redcube/model/uberization/UberizationRequestDataModel;
+
+.field public M0:Ld5/s;
+
+.field public N0:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, LP5/p;-><init>()V
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->K0:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final A0()V
+    .locals 2
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v0
+
+    check-cast v0, Lw3/k0;
+
+    iget-object v0, v0, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v0}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v0
+
+    check-cast v0, Lw3/k0;
+
+    iget-object v0, v0, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lb;->o(Landroidx/viewpager2/widget/ViewPager2;I)V
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->d()V
+
+    return-void
+.end method
+
+.method public final B()Ll3/a;
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lw3/k0;->a(Landroid/view/LayoutInflater;)Lw3/k0;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final D()V
+    .locals 14
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x8
+
+    new-instance v3, Ld5/s;
+
+    invoke-direct {v3}, Ld5/s;-><init>()V
+
+    new-instance v4, Landroid/os/Bundle;
+
+    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
+
+    iget-object v5, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->K0:Ljava/lang/String;
+
+    const-string v6, "SVS_OPERATION_KEY"
+
+    invoke-virtual {v4, v6, v5}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v3, v4}, Landroidx/fragment/app/j;->a0(Landroid/os/Bundle;)V
+
+    iput-object v3, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->M0:Ld5/s;
+
+    new-instance v3, LP5/v;
+
+    invoke-direct {v3}, LP5/v;-><init>()V
+
+    new-instance v4, LP5/d;
+
+    invoke-direct {v4}, LP5/d;-><init>()V
+
+    new-instance v5, Landroid/os/Bundle;
+
+    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
+
+    const-string v7, "UBERIZATION_REQUEST_ITEM"
+
+    iget-object v8, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->L0:Lbd/com/robi/redcube/model/uberization/UberizationRequestDataModel;
+
+    invoke-virtual {v5, v7, v8}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    invoke-virtual {v4, v5}, Landroidx/fragment/app/j;->a0(Landroid/os/Bundle;)V
+
+    sget-object v5, Lwa/A;->a:Lwa/A;
+
+    new-instance v5, LP5/J;
+
+    invoke-direct {v5}, LP5/J;-><init>()V
+
+    new-instance v7, LP5/a;
+
+    invoke-direct {v7}, LP5/a;-><init>()V
+
+    new-instance v8, LP5/y;
+
+    invoke-direct {v8}, LP5/y;-><init>()V
+
+    iget-object v9, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->M0:Ld5/s;
+
+    if-eqz v9, :cond_1
+
+    new-instance v10, LP5/G;
+
+    invoke-direct {v10}, LP5/G;-><init>()V
+
+    new-instance v11, Landroid/os/Bundle;
+
+    invoke-direct {v11}, Landroid/os/Bundle;-><init>()V
+
+    iget-object v12, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->K0:Ljava/lang/String;
+
+    invoke-virtual {v11, v6, v12}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v10, v11}, Landroidx/fragment/app/j;->a0(Landroid/os/Bundle;)V
+
+    new-instance v11, LP5/A;
+
+    invoke-direct {v11}, LP5/A;-><init>()V
+
+    new-instance v12, Landroid/os/Bundle;
+
+    invoke-direct {v12}, Landroid/os/Bundle;-><init>()V
+
+    iget-object v13, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->K0:Ljava/lang/String;
+
+    invoke-virtual {v12, v6, v13}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v11, v12}, Landroidx/fragment/app/j;->a0(Landroid/os/Bundle;)V
+
+    new-array v6, v2, [Ls3/o;
+
+    aput-object v3, v6, v1
+
+    aput-object v4, v6, v0
+
+    const/4 v3, 0x2
+
+    aput-object v5, v6, v3
+
+    const/4 v3, 0x3
+
+    aput-object v7, v6, v3
+
+    const/4 v3, 0x4
+
+    aput-object v8, v6, v3
+
+    const/4 v3, 0x5
+
+    aput-object v9, v6, v3
+
+    const/4 v3, 0x6
+
+    aput-object v10, v6, v3
+
+    const/4 v3, 0x7
+
+    aput-object v11, v6, v3
+
+    invoke-static {v6}, Lxa/o;->h([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v4
+
+    check-cast v4, Lw3/k0;
+
+    new-instance v5, Ld5/j;
+
+    invoke-virtual {p0}, Landroidx/fragment/app/o;->o()Landroidx/fragment/app/C;
+
+    move-result-object v6
+
+    const-string v7, "getSupportFragmentManager(...)"
+
+    invoke-static {v7, v6}, LLa/k;->d(Ljava/lang/String;Ljava/lang/Object;)V
+
+    iget-object v7, p0, LV1/g;->t:Landroidx/lifecycle/LifecycleRegistry;
+
+    invoke-direct {v5, v6, v7, v3}, Ld5/j;-><init>(Landroidx/fragment/app/C;Landroidx/lifecycle/Lifecycle;Ljava/util/List;)V
+
+    iget-object v3, v4, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v3, v5}, Landroidx/viewpager2/widget/ViewPager2;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$e;)V
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v3
+
+    check-cast v3, Lw3/k0;
+
+    iget-object v3, v3, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v3, v1}, Landroidx/viewpager2/widget/ViewPager2;->setUserInputEnabled(Z)V
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v1
+
+    check-cast v1, Lw3/k0;
+
+    iget-object v1, v1, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v1, v0}, Landroidx/viewpager2/widget/ViewPager2;->setOffscreenPageLimit(I)V
+
+    new-instance v0, Ld5/m;
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v1
+
+    check-cast v1, Lw3/k0;
+
+    iget-object v1, v1, Lw3/k0;->u:Landroid/widget/LinearLayout;
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v3
+
+    check-cast v3, Lw3/k0;
+
+    iget-object v3, v3, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v4
+
+    check-cast v4, Lw3/k0;
+
+    iget-object v4, v4, Lw3/k0;->v:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-direct {v0, p0, v1, v3, v4}, Ld5/m;-><init>(Landroid/content/Context;Landroid/widget/LinearLayout;Landroidx/viewpager2/widget/ViewPager2;Landroidx/appcompat/widget/AppCompatTextView;)V
+
+    iput-object v0, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->J0:Ld5/m;
+
+    invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->e()Landroidx/activity/OnBackPressedDispatcher;
+
+    move-result-object v0
+
+    new-instance v1, LC5/i;
+
+    invoke-direct {v1, v2, p0}, LC5/i;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {v0, p0, v1}, Lw8/b;->g(Landroidx/activity/OnBackPressedDispatcher;Landroidx/lifecycle/LifecycleOwner;LKa/l;)V
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v0
+
+    check-cast v0, Lw3/k0;
+
+    new-instance v1, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity$a;
+
+    invoke-direct {v1, p0}, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity$a;-><init>(Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;)V
+
+    iget-object v0, v0, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v0, v1}, Landroidx/viewpager2/widget/ViewPager2;->a(Landroidx/viewpager2/widget/ViewPager2$e;)V
+
+    iget v0, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->N0:I
+
+    if-lez v0, :cond_0
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v0
+
+    check-cast v0, Lw3/k0;
+
+    iget-object v0, v0, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    iget v1, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->N0:I
+
+    invoke-virtual {v0, v1}, Landroidx/viewpager2/widget/ViewPager2;->setCurrentItem(I)V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    const-string v0, "etsafFragment"
+
+    invoke-static {v0}, LLa/k;->l(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public final Q()V
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    const-string v1, "SVS_OPERATION_KEY"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, ""
+
+    :cond_0
+    iput-object v0, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->K0:Ljava/lang/String;
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x21
+
+    if-lt v0, v1, :cond_1
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    invoke-static {v0}, LP5/E;->d(Landroid/content/Intent;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbd/com/robi/redcube/model/uberization/UberizationRequestDataModel;
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    const-string v1, "UBERIZATION_REQUEST_ITEM"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lbd/com/robi/redcube/model/uberization/UberizationRequestDataModel;
+
+    :goto_0
+    iput-object v0, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->L0:Lbd/com/robi/redcube/model/uberization/UberizationRequestDataModel;
+
+    invoke-static {}, LKc/b;->b()LKc/b;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, LKc/b;->i(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final R()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+
+    sget-object v0, La6/a0;->a:La6/a0;
+
+    invoke-virtual {v0}, La6/a0;->a()V
+
+    return-void
+.end method
+
+.method public final d0(Landroid/widget/TextView;)V
+    .locals 1
+
+    const-string v0, "Wifi Request"
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public final onCreate(Landroid/os/Bundle;)V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_0
+
+    const-string v1, "KEY_CURRENT_ITEM"
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/BaseBundle;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    :cond_0
+    iput v0, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->N0:I
+
+    invoke-super {p0, p1}, LP5/p;->onCreate(Landroid/os/Bundle;)V
+
+    return-void
+.end method
+
+.method public final onDestroy()V
+    .locals 1
+
+    invoke-super {p0}, LP5/p;->onDestroy()V
+
+    iget-object v0, p0, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->J0:Ld5/m;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ld5/m;->a()V
+
+    invoke-static {}, LKc/b;->b()LKc/b;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, LKc/b;->l(Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_0
+    const-string v0, "progressBarHelper"
+
+    invoke-static {v0}, LLa/k;->l(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public final onMessageEvent(Lc6/a;)V
+    .locals 1
+    .annotation runtime LKc/i;
+        sticky = true
+        threadMode = .enum Lorg/greenrobot/eventbus/ThreadMode;->MAIN:Lorg/greenrobot/eventbus/ThreadMode;
+    .end annotation
+
+    const-string v0, "event"
+
+    invoke-static {v0, p1}, LLa/k;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    sget-object v0, Ld6/a;->u:Ld6/a;
+
+    iget-object p1, p1, Lc6/a;->a:Ljava/util/HashSet;
+
+    invoke-virtual {p1, v0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onSaveInstanceState(Landroid/os/Bundle;)V
+    .locals 2
+
+    const-string v0, "outState"
+
+    invoke-static {v0, p1}, LLa/k;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v0
+
+    check-cast v0, Lw3/k0;
+
+    iget-object v0, v0, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v0}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
+
+    move-result v0
+
+    const-string v1, "KEY_CURRENT_ITEM"
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    invoke-super {p0, p1}, Ls3/h;->onSaveInstanceState(Landroid/os/Bundle;)V
+
+    return-void
+.end method
+
+.method public final r0(Z)V
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Ls3/h;->h0()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final u()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final y0()V
+    .locals 3
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v0
+
+    check-cast v0, Lw3/k0;
+
+    iget-object v0, v0, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v0}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v1
+
+    check-cast v1, Lw3/k0;
+
+    iget-object v1, v1, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    const/4 v2, 0x1
+
+    invoke-static {v1, v2}, LA6/e;->h(Landroidx/viewpager2/widget/ViewPager2;I)I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v0
+
+    check-cast v0, Lw3/k0;
+
+    iget-object v0, v0, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-static {v0, v2}, LA4/h;->m(Landroidx/viewpager2/widget/ViewPager2;I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final z0(Landroidx/fragment/app/j;)V
+    .locals 4
+
+    const-string v0, "fragment"
+
+    invoke-static {v0, p1}, LLa/k;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/o;->o()Landroidx/fragment/app/C;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Ls3/a;->y()Ll3/a;
+
+    move-result-object v1
+
+    check-cast v1, Lw3/k0;
+
+    iget-object v1, v1, Lw3/k0;->w:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v1}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "f"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/y;->B(Ljava/lang/String;)Landroidx/fragment/app/j;
+
+    move-result-object v0
+
+    if-eq v0, p1, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lbd/com/robi/redcube/ui/sim_module/wifi_journey/WifiRequestActivity;->y0()V
+
+    return-void
+.end method

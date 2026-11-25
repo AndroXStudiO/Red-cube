@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/base_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clHeaderBrand"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:paddingStart="@dimen/_16dp"
+        android:paddingEnd="@dimen/_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:id="@id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6dp"
+            android:text="SIM Kit"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginEnd="8.0dip"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@id/clMiddle"
+            android:background="@drawable/bg_rectangle_shape_with_below_zero_radius"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeader">
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:id="@id/llHeaderBrandEl"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                app:layout_constraintTop_toTopOf="parent">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textSize="@dimen/_11sp"
+                    android:textColor="@color/black_500"
+                    android:gravity="center"
+                    android:id="@id/textName"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:layout_weight="1.0" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textSize="@dimen/_11sp"
+                    android:textColor="@color/black_500"
+                    android:gravity="center"
+                    android:id="@id/textUPrice"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/u_price"
+                    android:layout_weight="1.0" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textSize="@dimen/_11sp"
+                    android:textColor="@color/black_500"
+                    android:gravity="center"
+                    android:id="@id/textQty"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quantity_text"
+                    android:layout_weight="1.0" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:textSize="@dimen/_11sp"
+                    android:textColor="@color/black_500"
+                    android:gravity="center"
+                    android:id="@id/textViewTotal"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:layout_weight="1.0" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:gravity="center"
+                android:id="@id/recycleView"
+                android:scrollbars="none"
+                android:clipToPadding="false"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginTop="@dimen/_10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEndMargin"
+                app:layout_constraintStart_toEndOf="@id/guidelineStartMargin"
+                app:layout_constraintTop_toBottomOf="@id/llHeaderBrandEl" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineStartMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="@dimen/_16dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineEndMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="@dimen/_16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clTotal"
+            android:background="@drawable/bg_grey_rectangle_shape_top_zero_radius"
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clMiddle">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:id="@id/tvTotalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                android:layout_marginStart="@dimen/_12dp"
+                android:layout_marginEnd="8.0dip"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/ivRobiTaka"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/textTotal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_taka" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:id="@id/textTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:layout_marginStart="@dimen/_4dp"
+                android:layout_marginEnd="@dimen/_12dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

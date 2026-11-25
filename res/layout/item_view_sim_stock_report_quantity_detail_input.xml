@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/clMain"
+    android:background="@drawable/bg_rectangle_shape_grey"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clBrandRobi"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineStartMarginRobi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="@dimen/_12dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineMiddleMarginRobi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guidelineEndMarginRobi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_end="@dimen/_12dp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_800"
+            android:id="@id/textType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Robi"
+            android:layout_marginEnd="8.0dip"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/guidelineStartMarginRobi"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/black_800"
+            android:id="@id/tvStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="316"
+            android:layout_marginStart="@dimen/_4dp"
+            android:layout_marginEnd="@dimen/_12dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clInput"
+        android:background="@drawable/bg_rectangle_shape"
+        android:layout_width="fill_parent"
+        android:layout_height="52.0dip"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginStart="@dimen/_12dp"
+        android:layout_marginEnd="@dimen/_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clBrandRobi">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_12sp"
+            android:textColor="@color/hin_color"
+            android:id="@id/textHintQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4dp"
+            android:text="Quantity"
+            android:layout_marginStart="@dimen/_12dp"
+            android:layout_marginEnd="8.0dip"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:textSize="@dimen/_14sp"
+            android:textColor="@color/black_800"
+            android:textColorHint="@color/grey"
+            android:id="@id/etQty"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:maxLength="11"
+            android:inputType="numberSigned"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/etAmount"
+            android:paddingStart="@dimen/_4dp"
+            android:layout_marginStart="@dimen/_12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textHintQuantity" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textColor="@color/black_800"
+        android:ellipsize="end"
+        android:id="@id/textPrice"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="Price : "
+        android:maxLines="1"
+        android:layout_marginStart="8.0dip"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivELTaka"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/clInput" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@id/ivELTaka"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="12.0sp"
+        android:layout_marginStart="@dimen/_12dp"
+        android:layout_marginEnd="@dimen/_5dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTotalRequestedAmount"
+        app:layout_constraintEnd_toStartOf="@id/tvTotalRequestedAmount"
+        app:layout_constraintTop_toBottomOf="@id/clInput"
+        app:layout_constraintTop_toTopOf="@id/tvTotalRequestedAmount"
+        app:srcCompat="@drawable/ic_taka" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="@dimen/_12sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_800"
+        android:ellipsize="end"
+        android:id="@id/tvTotalRequestedAmount"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:maxLines="1"
+        android:layout_marginStart="8.0dip"
+        android:layout_marginEnd="@dimen/_12dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/clInput" />
+</androidx.constraintlayout.widget.ConstraintLayout>

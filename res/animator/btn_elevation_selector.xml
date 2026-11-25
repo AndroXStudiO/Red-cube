@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_enabled="true">
+        <objectAnimator
+            android:duration="0"
+            android:valueFrom="0.0dip"
+            android:valueTo="0.0dip"
+            android:propertyName="elevation" />
+    </item>
+    <item
+        android:state_enabled="false">
+        <objectAnimator
+            android:duration="80"
+            android:valueFrom="0.0dip"
+            android:valueTo="1.0dip"
+            android:propertyName="elevation" />
+    </item>
+    <item>
+        <objectAnimator
+            android:duration="0"
+            android:valueFrom="0.0dip"
+            android:valueTo="0.0dip"
+            android:propertyName="elevation" />
+    </item>
+</selector>

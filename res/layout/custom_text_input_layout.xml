@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@id/custom_til"
+        android:paddingTop="@dimen/_2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:boxCollapsedPaddingTop="4.0dip"
+        app:boxStrokeWidth="0.0dip"
+        app:boxStrokeWidthFocused="0.0dip"
+        app:hintTextAppearance="@style/CustomHintText"
+        app:hintTextColor="@color/black_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="@dimen/_14sp"
+            android:id="@id/custom_et"
+            android:background="@android:color/transparent"
+            android:paddingBottom="0.0dip"
+            android:focusable="false"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <ImageView
+        android:id="@id/custom_iv_icon"
+        android:layout_width="@dimen/_16dp"
+        android:layout_height="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        app:layout_constraintBottom_toBottomOf="@id/custom_til"
+        app:layout_constraintEnd_toEndOf="@id/custom_til"
+        app:layout_constraintTop_toTopOf="@id/custom_til" />
+</merge>

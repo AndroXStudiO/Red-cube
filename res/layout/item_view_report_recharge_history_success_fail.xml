@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="79.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/clBrandRobi"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineStartMarginRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="@dimen/_16dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:orientation="vertical"
+                android:id="@id/guidelineEndMarginRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="@dimen/_16dp" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/ivBrandRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                app:layout_constraintStart_toStartOf="@id/guidelineStartMarginRobi"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_brand_robi" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_900"
+                android:id="@id/textMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginStart="8.0dip"
+                android:layout_marginEnd="8.0dip"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivBrandRobi"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/ivRobiTaka"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tvAmountRobi"
+                app:layout_constraintEnd_toStartOf="@id/tvAmountRobi"
+                app:layout_constraintTop_toTopOf="@id/tvAmountRobi"
+                app:srcCompat="@drawable/ic_taka" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black_800"
+                android:id="@id/tvAmountRobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginStart="@dimen/_2dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEndMarginRobi"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_11sp"
+                android:textColor="@color/black_500"
+                android:id="@id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6.0dip"
+                android:layout_marginStart="8.0dip"
+                android:layout_marginEnd="8.0dip"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivBrandRobi"
+                app:layout_constraintTop_toBottomOf="@id/textMobile" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/ivCommission"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvAmountCommission"
+                app:layout_constraintEnd_toStartOf="@id/tvAmountCommission"
+                app:layout_constraintTop_toBottomOf="@id/tvAmountRobi"
+                app:layout_constraintTop_toTopOf="@id/tvAmountCommission"
+                app:srcCompat="@drawable/ic_commission_offer" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_12sp"
+                android:textColor="@color/green_600"
+                android:id="@id/tvAmountCommission"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6dp"
+                android:layout_marginStart="@dimen/_2dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEndMarginRobi"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@id/tvAmountRobi" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/_13sp"
+                android:textStyle="bold"
+                android:textColor="@color/green_600"
+                android:id="@id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2.0dip"
+                android:layout_marginStart="8.0dip"
+                android:layout_marginEnd="8.0dip"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivBrandRobi"
+                app:layout_constraintTop_toBottomOf="@id/textDate" />
+            <View
+                android:id="@id/view1"
+                android:background="@color/black_100"
+                android:layout_width="0.0dip"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="@dimen/_12dp"
+                android:layout_marginStart="@dimen/_12dp"
+                android:layout_marginEnd="@dimen/_12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvStatus" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

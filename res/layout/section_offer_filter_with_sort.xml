@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/base_background"
+    android:paddingLeft="@dimen/_10sp"
+    android:paddingRight="@dimen/_10sp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_10sp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:textSize="14.0sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:id="@id/tvFilter"
+        android:tag="1"
+        android:background="@drawable/background_offer_sort_item"
+        android:paddingLeft="@dimen/_12dp"
+        android:paddingTop="@dimen/_6dp"
+        android:paddingRight="@dimen/_12dp"
+        android:paddingBottom="@dimen/_6dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sort_by_price"
+        android:drawablePadding="@dimen/_2dp"
+        android:paddingHorizontal="@dimen/_12dp"
+        android:paddingVertical="@dimen/_6dp"
+        app:drawableStartCompat="@drawable/ic_offer_filter_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:orientation="horizontal"
+        android:id="@id/rvSubcategoryPriceAndTimeFilter"
+        android:clipToPadding="false"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_12dp"
+        android:paddingEnd="@dimen/_12dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvFilter"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/clMain"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/clHeader"
+        android:background="@drawable/bg_rectangle_shape"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_10_13sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_500"
+            android:id="@id/tvHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8dp"
+            android:text="আবারও জয়ের দ্বারপ্রান্তে বাংলাদেশ"
+            android:layout_marginStart="@dimen/_12dp"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_14sp"
+            android:textColor="@color/black_500"
+            android:id="@id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6dp"
+            android:text="সেপ্ট. ৯, ২০২৪ | ৫:৩৬ পিএম"
+            android:layout_marginStart="@dimen/_12dp"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/tvHeaderText" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="@dimen/_8_68sp"
+            android:textColor="@color/black_500"
+            android:id="@id/tvDsrMobile"
+            android:paddingBottom="@dimen/_12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:text="পাকিস্তানের বিপক্ষে টেস্ট ম্যাচটির শেষ মুহূর্ত লাইভ দেখতে ট্যাপ করুন এখনই।"
+            android:layout_marginStart="@dimen/_12dp"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@id/tvDate" />
+        <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:id="@id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.2" />
+        <ImageView
+            android:id="@id/ivNotification"
+            android:layout_width="@dimen/_24dp"
+            android:layout_height="@dimen/_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_notification" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

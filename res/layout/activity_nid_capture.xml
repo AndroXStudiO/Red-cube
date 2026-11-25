@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@id/main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.camera.view.PreviewView
+        android:id="@id/previewView"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <bd.com.robi.redcube.custom_view.QrOverlayView
+        android:id="@id/overlayView"
+        android:background="@android:color/transparent"
+        android:layout_width="0.0dip"
+        android:layout_height="0.0dip"
+        app:layout_constraintBottom_toBottomOf="@id/previewView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/previewView" />
+    <com.google.android.material.button.MaterialButton
+        android:textSize="@dimen/_12sp"
+        android:textStyle="normal"
+        android:textColor="@color/white"
+        android:id="@id/btnCenterProperly"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_36dp"
+        android:layout_marginTop="@dimen/_30dp"
+        android:text="@string/scan_nid_front"
+        android:insetTop="0.0dip"
+        android:insetBottom="0.0dip"
+        android:textAllCaps="false"
+        android:backgroundTint="#0000004d"
+        app:cornerRadius="@dimen/_32dp"
+        app:icon="@drawable/ic_center_properly"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@id/bottomButtons"
+        android:padding="@dimen/_36dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20dp">
+            <ImageButton
+                android:id="@id/btnCapture"
+                android:background="@android:color/transparent"
+                android:layout_width="48.0dip"
+                android:layout_height="48.0dip"
+                android:src="@drawable/ic_capture"
+                android:contentDescription="Capture" />
+            <TextView
+                android:textSize="12.0sp"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capture" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:textSize="@dimen/_12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_800"
+            android:id="@id/btnInputManually"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_36dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginBottom="@dimen/_4dp"
+            android:text="@string/input_manually"
+            android:insetTop="0.0dip"
+            android:insetBottom="0.0dip"
+            android:textAllCaps="false"
+            android:backgroundTint="#ffffffcc"
+            android:layout_marginVertical="@dimen/_4dp"
+            app:cornerRadius="@dimen/_32dp"
+            app:icon="@drawable/ic_input_manually"
+            app:iconTint="@color/black_800" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

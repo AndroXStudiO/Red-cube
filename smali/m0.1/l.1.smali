@@ -1,0 +1,113 @@
+.class public final Lm0/l;
+.super LLa/m;
+.source "SourceFile"
+
+# interfaces
+.implements LKa/p;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "LLa/m;",
+        "LKa/p<",
+        "Ly0/i;",
+        "Ljava/lang/Integer;",
+        "Lwa/A;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final synthetic A:I
+
+.field public final synthetic B:I
+
+.field public final synthetic C:I
+
+.field public final synthetic u:Ljava/lang/String;
+
+.field public final synthetic v:LK0/i;
+
+.field public final synthetic w:Lu1/H;
+
+.field public final synthetic x:I
+
+.field public final synthetic y:Z
+
+.field public final synthetic z:I
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;LK0/i;Lu1/H;IZIIII)V
+    .locals 0
+
+    iput-object p1, p0, Lm0/l;->u:Ljava/lang/String;
+
+    iput-object p2, p0, Lm0/l;->v:LK0/i;
+
+    iput-object p3, p0, Lm0/l;->w:Lu1/H;
+
+    iput p4, p0, Lm0/l;->x:I
+
+    iput-boolean p5, p0, Lm0/l;->y:Z
+
+    iput p6, p0, Lm0/l;->z:I
+
+    iput p7, p0, Lm0/l;->A:I
+
+    iput p8, p0, Lm0/l;->B:I
+
+    iput p9, p0, Lm0/l;->C:I
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1}, LLa/m;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
+
+    move-object v7, p1
+
+    check-cast v7, Ly0/i;
+
+    check-cast p2, Ljava/lang/Number;
+
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+
+    iget p1, p0, Lm0/l;->B:I
+
+    or-int/lit8 p1, p1, 0x1
+
+    invoke-static {p1}, Lkb/E;->r(I)I
+
+    move-result v8
+
+    iget v5, p0, Lm0/l;->z:I
+
+    iget v9, p0, Lm0/l;->C:I
+
+    iget-object v0, p0, Lm0/l;->u:Ljava/lang/String;
+
+    iget-object v1, p0, Lm0/l;->v:LK0/i;
+
+    iget-object v2, p0, Lm0/l;->w:Lu1/H;
+
+    iget v3, p0, Lm0/l;->x:I
+
+    iget-boolean v4, p0, Lm0/l;->y:Z
+
+    iget v6, p0, Lm0/l;->A:I
+
+    invoke-static/range {v0 .. v9}, Lm0/o;->a(Ljava/lang/String;LK0/i;Lu1/H;IZIILy0/i;II)V
+
+    sget-object p1, Lwa/A;->a:Lwa/A;
+
+    return-object p1
+.end method

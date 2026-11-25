@@ -1,0 +1,60 @@
+.class public final LJ3/J2;
+.super LCa/c;
+.source "SourceFile"
+
+
+# annotations
+.annotation runtime LCa/e;
+    c = "bd.com.robi.redcube.repository.FraudRepository"
+    f = "FraudRepository.kt"
+    l = {
+        0x56
+    }
+    m = "generateQr"
+.end annotation
+
+
+# instance fields
+.field public synthetic t:Ljava/lang/Object;
+
+.field public final synthetic u:LH8/n;
+
+.field public v:I
+
+
+# direct methods
+.method public constructor <init>(LH8/n;LCa/c;)V
+    .locals 0
+
+    iput-object p1, p0, LJ3/J2;->u:LH8/n;
+
+    invoke-direct {p0, p2}, LCa/c;-><init>(LAa/e;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iput-object p1, p0, LJ3/J2;->t:Ljava/lang/Object;
+
+    iget p1, p0, LJ3/J2;->v:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, LJ3/J2;->v:I
+
+    iget-object p1, p0, LJ3/J2;->u:LH8/n;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, v0, p0}, LH8/n;->g(Lmc/b;Lbd/com/robi/redcube/model/access_management/qr/QrCreateRequest;LCa/c;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
