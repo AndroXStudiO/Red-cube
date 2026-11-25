@@ -8,7 +8,7 @@
 
 # virtual methods
 .method public final intercept(Lvc/r$a;)Lvc/A;
-    .locals 6
+    .locals 7
 
     sget-object v0, Lbd/com/robi/redcube/application/AppManager;->B:Lbd/com/robi/redcube/application/AppManager;
 
@@ -73,6 +73,12 @@
     const-string v5, "HmacSHA256"
 
     invoke-direct {v1, v3, v5}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
+
+    invoke-virtual {v1}, Ljavax/crypto/spec/SecretKeySpec;->getEncoded()[B
+
+    move-result-object v6
+
+    invoke-static {v6}, Lmt/Log8F88E4;->a(Ljava/lang/Object;)V
 
     invoke-static {v5}, Ljavax/crypto/Mac;->getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;
 
