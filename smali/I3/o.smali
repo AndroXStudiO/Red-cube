@@ -14,7 +14,36 @@
 
     iget-object v0, p1, LAc/f;->e:Lvc/w;
 
-    # Bypass 2: still dump the timestamp-derived HMAC key for observability ...
+    iget-object v1, v0, Lvc/w;->d:Lvc/z;
+
+    const-string v2, ""
+
+    if-eqz v1, :cond_0
+
+    new-instance v3, LIc/e;
+
+    invoke-direct {v3}, LIc/e;-><init>()V
+
+    invoke-virtual {v1, v3}, Lvc/z;->c(LIc/g;)V
+
+    sget-object v1, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    const-string v4, "UTF_8"
+
+    invoke-static {v4, v1}, LLa/k;->d(Ljava/lang/String;Ljava/lang/Object;)V
+
+    iget-wide v4, v3, LIc/e;->u:J
+
+    invoke-virtual {v3, v4, v5, v1}, LIc/e;->Q0(JLjava/nio/charset/Charset;)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :cond_0
+    move-object v1, v2
+
+    :goto_0
     const-string v3, "UTC"
 
     invoke-static {v3}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
@@ -47,7 +76,50 @@
 
     invoke-static {v5, v6}, Lz3/d;->j(Ljava/lang/String;Ljava/lang/String;)V
 
-    # ... but do NOT compute/add X-User-Identifier / X-User-Temporal: pass through unmodified
+    invoke-static {v5, v1}, Lw8/b;->p(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2
+    .local v0, "00BB.java:2":V
+    invoke-static {v1}, Lmt/Log8F88E4;->a(Ljava/lang/Object;)V
+
+    invoke-static {v1}, Lmt/Log7E37A;->a(Ljava/lang/Object;)V
+
+    invoke-virtual {v0}, Lvc/w;->a()Lvc/w$a;
+
+    move-result-object v0
+
+    if-nez v1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move-object v2, v1
+
+    :goto_1
+    const-string v1, "X-User-Identifier"
+
+    invoke-virtual {v0, v1, v2}, Lvc/w$a;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "X-User-Temporal"
+
+    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 3
+    .local v0, "00BB.java:3":V
+    invoke-static {v2}, Lmt/Log8F88E4;->a(Ljava/lang/Object;)V
+
+    invoke-static {v2}, Lmt/Log7E37A;->a(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v1, v2}, Lvc/w$a;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lvc/w$a;->b()Lvc/w;
+
+    move-result-object v0
+
     invoke-virtual {p1, v0}, LAc/f;->a(Lvc/w;)Lvc/A;
 
     move-result-object p1
