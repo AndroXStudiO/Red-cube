@@ -56,6 +56,7 @@
 
     invoke-static {v0}, Lmt/Log7E37A;->a(Ljava/lang/Object;)V
 
+    # Bypass 1: still dump the signing key for observability ...
     new-instance v1, Ljavax/crypto/spec/SecretKeySpec;
 
     sget-object v2, Lcc/a;->b:Ljava/nio/charset/Charset;
@@ -80,63 +81,12 @@
 
     invoke-static {v6}, Lmt/Log8F88E4;->a(Ljava/lang/Object;)V
 
-    invoke-static {v5}, Ljavax/crypto/Mac;->getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v0
-
-    invoke-static {v4, v0}, LLa/k;->d(Ljava/lang/String;Ljava/lang/Object;)V
-
-    invoke-virtual {v3, v0}, Ljavax/crypto/Mac;->doFinal([B)[B
-
-    move-result-object v0
-
-    const-string v1, "doFinal(...)"
-
-    invoke-static {v1, v0}, LLa/k;->d(Ljava/lang/String;Ljava/lang/Object;)V
-
-    new-instance v1, LI0/k;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, v2}, LI0/k;-><init>(I)V
-
-    const-string v2, ""
-
-    const/16 v3, 0x1e
-
-    invoke-static {v0, v2, v1, v3}, Lxa/m;->d0([BLjava/lang/String;LKa/l;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2
-    .local v0, "00BC.java:2":V
-    invoke-static {v0}, Lmt/Log8F88E4;->a(Ljava/lang/Object;)V
-
-    invoke-static {v0}, Lmt/Log7E37A;->a(Ljava/lang/Object;)V
-
+    # ... but do NOT compute/add the Authorization HMAC header: pass the request through unmodified
     check-cast p1, LAc/f;
 
     iget-object v1, p1, LAc/f;->e:Lvc/w;
 
-    invoke-virtual {v1}, Lvc/w;->a()Lvc/w$a;
-
-    move-result-object v1
-
-    const-string v2, "Authorization"
-
-    invoke-virtual {v1, v2, v0}, Lvc/w$a;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Lvc/w$a;->b()Lvc/w;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, LAc/f;->a(Lvc/w;)Lvc/A;
+    invoke-virtual {p1, v1}, LAc/f;->a(Lvc/w;)Lvc/A;
 
     move-result-object p1
 
